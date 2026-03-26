@@ -1,0 +1,14 @@
+<a class="skip-link" href="#main-content">Pular para o conteudo</a>
+
+<app-header [navigation]="navigation" [business]="business" />
+
+<main id="main-content" class="landing-page">
+  <app-hero [business]="business" [products]="products" />
+  <app-brand-experience [business]="business" />
+  <app-product-highlights [business]="business" [products]="products" />
+  <app-testimonials [business]="business" [testimonials]="testimonials" />
+  <app-location [business]="business" />
+  <app-faq [items]="faqItems" />
+</main>
+
+<app-footer [business]="business" [navigation]="navigation" />

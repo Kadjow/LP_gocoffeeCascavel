@@ -1,0 +1,75 @@
+@use '../../../../../styles/abstracts/mixins' as *;
+@use '../../../../../styles/abstracts/tokens' as *;
+
+.location__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.location__details {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.35rem;
+  border-radius: var(--radius-lg);
+}
+
+.location__details small {
+  color: var(--color-text-muted);
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.location__details strong {
+  font-size: 1.1rem;
+}
+
+.location__modes {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.location__modes article {
+  display: grid;
+  gap: 0.35rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.location__modes p {
+  color: var(--color-text-muted);
+}
+
+.location__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.location__map {
+  overflow: hidden;
+  padding: 0.5rem;
+  border-radius: var(--radius-xl);
+}
+
+.location__map iframe {
+  width: 100%;
+  min-height: 26rem;
+  border: 0;
+  border-radius: calc(var(--radius-xl) - 0.35rem);
+  background: linear-gradient(180deg, rgba($color-cream, 0.96), rgba(255, 249, 244, 1));
+}
+
+@include respond-up(lg) {
+  .location__grid {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  .location__content {
+    display: grid;
+    align-content: center;
+  }
+}

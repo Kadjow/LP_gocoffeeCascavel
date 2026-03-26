@@ -1,0 +1,144 @@
+@use '../../../../../styles/abstracts/mixins' as *;
+@use '../../../../../styles/abstracts/tokens' as *;
+
+.products__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.products__card {
+  display: grid;
+  gap: 0.85rem;
+  min-height: 18rem;
+  padding: 1.35rem;
+  border-radius: var(--radius-lg);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.products__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-floating);
+}
+
+.products__card--caramel {
+  background:
+    linear-gradient(180deg, rgba(255, 249, 244, 0.94), rgba(245, 235, 221, 0.92)),
+    linear-gradient(140deg, rgba($color-caramel, 0.18), transparent 55%);
+}
+
+.products__card--olive {
+  background:
+    linear-gradient(180deg, rgba(255, 249, 244, 0.94), rgba(245, 235, 221, 0.92)),
+    linear-gradient(140deg, rgba($color-olive, 0.16), transparent 55%);
+}
+
+.products__card small,
+.products__dialog-head small,
+.products__dialog-note span {
+  color: var(--color-text-muted);
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.products__card h3,
+.products__dialog h3 {
+  font-size: 1.7rem;
+}
+
+.products__card p,
+.products__dialog-copy,
+.products__dialog-note p {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.products__link {
+  width: fit-content;
+  margin-top: auto;
+  padding: 0;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.products__dialog-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.products__dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(38, 21, 12, 0.38);
+  backdrop-filter: blur(8px);
+}
+
+.products__dialog {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.35rem;
+  border-radius: 1.8rem 1.8rem 0.9rem 0.9rem;
+  background: rgba(255, 249, 244, 0.98);
+  box-shadow: var(--shadow-panel);
+}
+
+.products__dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.products__dialog-head > div {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.products__dialog-close {
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  background: rgba($color-cream, 0.9);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.products__dialog-note {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius-md);
+  background: rgba($color-cream, 0.9);
+  border: 1px solid var(--color-border);
+}
+
+@include respond-up(md) {
+  .products__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include respond-up(lg) {
+  .products__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .products__dialog {
+    top: 50%;
+    right: clamp(2rem, 6vw, 5rem);
+    bottom: auto;
+    left: auto;
+    width: min(30rem, calc(100vw - 4rem));
+    padding: 1.75rem;
+    border-radius: var(--radius-xl);
+    transform: translateY(-50%);
+  }
+}

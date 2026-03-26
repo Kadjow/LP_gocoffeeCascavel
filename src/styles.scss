@@ -1,0 +1,10 @@
+@use './styles/abstracts/tokens';
+@use './styles/base/root';
+@use './styles/base/reset';
+@use './styles/base/typography';
+@use './styles/layout/container';
+@use './styles/components/buttons';
+@use './styles/components/sections';
+@use './styles/utilities/motion';
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');

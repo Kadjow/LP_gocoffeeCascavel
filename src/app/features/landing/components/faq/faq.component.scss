@@ -1,0 +1,39 @@
+@use '../../../../../styles/abstracts/mixins' as *;
+
+.faq__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.faq__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq__item {
+  padding: 1.2rem 1.3rem;
+  border-radius: var(--radius-lg);
+}
+
+.faq__item summary {
+  list-style: none;
+  font-weight: 800;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item p {
+  margin-top: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+@include respond-up(lg) {
+  .faq__grid {
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    gap: 3rem;
+    align-items: start;
+  }
+}

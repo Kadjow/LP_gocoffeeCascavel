@@ -1,0 +1,57 @@
+<section class="section location" id="localizacao">
+  <div class="container location__grid">
+    <div class="location__content" appRevealOnScroll="40ms">
+      <app-section-heading
+        eyebrow="Localizacao"
+        title="No centro de Cascavel, com endereco facil e experiencia que vale a visita."
+        description="A unidade combina praticidade para quem esta na regiao central com um ambiente que convida a sentar, retirar ou pedir pelo canal certo."
+      />
+
+      <div class="location__details surface-panel">
+        <div>
+          <small>Endereco</small>
+          <strong>{{ business().address }}</strong>
+        </div>
+
+        <div class="location__modes">
+          @for (mode of business().serviceModes; track mode.label) {
+            <article>
+              <strong>{{ mode.label }}</strong>
+              <p>{{ mode.detail }}</p>
+            </article>
+          }
+        </div>
+
+        <div class="location__actions">
+          <a
+            class="btn btn--secondary"
+            [href]="business().mapUrl"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir localizacao da GoCoffee Cascavel no mapa"
+          >
+            Abrir no mapa
+          </a>
+          <a
+            class="btn btn--primary"
+            [href]="business().ifoodUrl"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir delivery oficial da GoCoffee Cascavel no iFood"
+          >
+            Delivery no iFood
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="location__map surface-panel" appRevealOnScroll="140ms">
+      <iframe
+        title="Mapa da GoCoffee Cascavel"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        [src]="safeMapEmbedUrl()"
+      ></iframe>
+    </div>
+  </div>
+</section>

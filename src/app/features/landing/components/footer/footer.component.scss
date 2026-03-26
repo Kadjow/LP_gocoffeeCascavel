@@ -1,0 +1,64 @@
+@use '../../../../../styles/abstracts/mixins' as *;
+@use '../../../../../styles/abstracts/tokens' as *;
+
+.footer {
+  padding-block: 2.5rem 1.5rem;
+  color: rgba(255, 249, 244, 0.88);
+  background:
+    linear-gradient(180deg, rgba($color-signature, 0.98), rgba($color-espresso, 1)),
+    linear-gradient(135deg, rgba($color-caramel, 0.12), transparent);
+}
+
+.footer__grid {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.footer__brand {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.footer__brand strong {
+  font-family: $font-display;
+  font-size: 2rem;
+}
+
+.footer__brand p,
+.footer__brand span,
+.footer__bar small {
+  color: rgba(255, 249, 244, 0.68);
+}
+
+.footer__nav,
+.footer__links {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.footer a {
+  width: fit-content;
+  transition: color var(--transition-base);
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer__bar {
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 249, 244, 0.16);
+}
+
+@include respond-up(lg) {
+  .footer__grid {
+    grid-template-columns: 1.25fr 0.8fr 0.9fr;
+    align-items: start;
+  }
+
+  .footer__nav,
+  .footer__links {
+    justify-content: end;
+  }
+}

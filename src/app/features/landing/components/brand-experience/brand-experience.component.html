@@ -1,0 +1,21 @@
+<section class="section experience" id="experiencia">
+  <div class="container experience__grid">
+    <div appRevealOnScroll="40ms">
+      <app-section-heading
+        eyebrow="Experiencia da marca"
+        title="Cafe especial com clima de pausa boa, encontro e retorno."
+        description="A GoCoffee Cascavel se posiciona como uma cafeteria que cuida do produto e da permanencia. O ambiente acolhe, o atendimento sustenta a experiencia e a vitrine convida sem excesso."
+      />
+    </div>
+
+    <div class="experience__content">
+      @for (pillar of business().experiencePillars; track pillar.title; let index = $index) {
+        <article class="experience__card surface-panel" [appRevealOnScroll]="(index * 90 + 80) + 'ms'">
+          <span>0{{ index + 1 }}</span>
+          <strong>{{ pillar.title }}</strong>
+          <p>{{ pillar.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

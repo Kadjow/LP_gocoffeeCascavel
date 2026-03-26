@@ -1,0 +1,69 @@
+@use '../../../../../styles/abstracts/mixins' as *;
+
+.testimonials__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.testimonials__summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.3rem;
+  border-radius: var(--radius-lg);
+}
+
+.testimonials__summary strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2.8rem, 6vw, 4rem);
+}
+
+.testimonials__summary h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.3rem;
+}
+
+.testimonials__summary p,
+.testimonials__card p,
+.testimonials__card small {
+  color: var(--color-text-muted);
+}
+
+.testimonials__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.testimonials__card {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.35rem;
+  border-radius: var(--radius-lg);
+}
+
+.testimonials__card span {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.testimonials__card footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+@include respond-up(lg) {
+  .testimonials__grid {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .testimonials__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

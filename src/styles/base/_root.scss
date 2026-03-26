@@ -1,0 +1,51 @@
+@use '../abstracts/tokens' as *;
+
+:root {
+  --color-bg: #{$color-off-white};
+  --color-bg-secondary: #{$color-cream};
+  --color-bg-accent: #{$color-sand};
+  --color-surface: rgba(255, 249, 244, 0.82);
+  --color-surface-strong: rgba(245, 235, 221, 0.92);
+  --color-text: #{$color-espresso};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-inverse: #{$color-off-white};
+  --color-border: #{$color-border};
+  --color-border-strong: #{$color-border-strong};
+  --color-primary: #{$color-espresso};
+  --color-primary-strong: #26150c;
+  --color-secondary: #{$color-caramel};
+  --color-support: #{$color-olive};
+  --shadow-soft: #{$shadow-soft};
+  --shadow-panel: #{$shadow-panel};
+  --shadow-floating: #{$shadow-floating};
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-pill: #{$radius-pill};
+  --container-md: #{$container-md};
+  --container-lg: #{$container-lg};
+  --container-xl: #{$container-xl};
+  --transition-base: #{$transition-base};
+  --transition-smooth: #{$transition-smooth};
+  --transition-emphatic: #{$transition-emphatic};
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(197, 139, 78, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(110, 124, 87, 0.14), transparent 24%),
+    linear-gradient(180deg, #fffaf5 0%, #fff9f4 40%, #f8efe5 100%);
+  color: var(--color-text);
+  font-family: $font-body;
+}
+
+::selection {
+  background: rgba($color-caramel, 0.26);
+}

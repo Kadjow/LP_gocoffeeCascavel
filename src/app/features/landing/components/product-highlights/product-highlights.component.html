@@ -1,0 +1,78 @@
+<section class="section products" id="produtos">
+  <div class="container">
+    <div appRevealOnScroll="40ms">
+      <app-section-heading
+        eyebrow="Vitrine em destaque"
+        title="Uma selecao que mistura cafe especial, assinatura da casa e desejo de voltar."
+        description="Os produtos em evidencia reforcam repertorio, apresentacao e variedade sem transformar a pagina em catalogo tecnico."
+      />
+    </div>
+
+    <div class="products__grid">
+      @for (product of products(); track product.id; let index = $index) {
+        <article
+          class="products__card surface-panel"
+          [class.products__card--caramel]="product.accent === 'caramel'"
+          [class.products__card--olive]="product.accent === 'olive'"
+          [appRevealOnScroll]="(index * 70 + 90) + 'ms'"
+        >
+          <small>{{ product.category }}</small>
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <button
+            type="button"
+            class="products__link"
+            (click)="openDetails(product)"
+            [attr.aria-label]="'Ver detalhes de ' + product.name"
+          >
+            Ver detalhe
+          </button>
+        </article>
+      }
+    </div>
+  </div>
+
+  @if (selectedProduct(); as product) {
+    <div class="products__dialog-layer">
+      <button
+        type="button"
+        class="products__dialog-backdrop"
+        aria-label="Fechar detalhe do produto"
+        (click)="closeDetails()"
+        animate.enter="dialog-backdrop-enter"
+        animate.leave="dialog-backdrop-leave"
+      ></button>
+
+      <section
+        class="products__dialog surface-panel"
+        role="dialog"
+        aria-modal="true"
+        [attr.aria-labelledby]="'product-dialog-title-' + product.id"
+        animate.enter="dialog-panel-enter"
+        animate.leave="dialog-panel-leave"
+      >
+        <div class="products__dialog-head">
+          <div>
+            <small>{{ product.category }}</small>
+            <h3 [id]="'product-dialog-title-' + product.id">{{ product.name }}</h3>
+          </div>
+          <button
+            type="button"
+            class="products__dialog-close"
+            aria-label="Fechar detalhe do produto"
+            (click)="closeDetails()"
+          >
+            Fechar
+          </button>
+        </div>
+
+        <p class="products__dialog-copy">{{ product.description }}</p>
+
+        <div class="products__dialog-note">
+          <span>Observacao fixa</span>
+          <p>{{ business().milkOptionsNote }}</p>
+        </div>
+      </section>
+    </div>
+  }
+</section>

@@ -1,0 +1,26 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <strong>{{ business().name }}</strong>
+      <p>{{ business().subtitle }}</p>
+      <span>{{ business().address }}</span>
+    </div>
+
+    <nav class="footer__nav" aria-label="Navegacao do rodape">
+      @for (item of navigation(); track item.fragment) {
+        <a [href]="'#' + item.fragment">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="footer__links">
+      <a [href]="business().whatsappUrl" target="_blank" rel="noreferrer">WhatsApp</a>
+      <a [href]="business().ifoodUrl" target="_blank" rel="noreferrer">iFood</a>
+      <a [href]="business().mapUrl" target="_blank" rel="noreferrer">Mapa</a>
+      <a href="#inicio">Voltar ao topo</a>
+    </div>
+  </div>
+
+  <div class="container footer__bar">
+    <small>© {{ currentYear }} GoCoffee Cascavel. Todos os direitos reservados.</small>
+  </div>
+</footer>

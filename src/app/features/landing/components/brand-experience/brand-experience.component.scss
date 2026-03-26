@@ -1,0 +1,47 @@
+@use '../../../../../styles/abstracts/mixins' as *;
+
+.experience__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.experience__content {
+  display: grid;
+  gap: 1rem;
+}
+
+.experience__card {
+  display: grid;
+  gap: 0.8rem;
+  padding: clamp(1.25rem, 2vw, 1.6rem);
+  border-radius: var(--radius-lg);
+}
+
+.experience__card span {
+  color: var(--color-support);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.experience__card strong {
+  font-size: 1.5rem;
+}
+
+.experience__card p {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+@include respond-up(lg) {
+  .experience__grid {
+    grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .experience__content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
