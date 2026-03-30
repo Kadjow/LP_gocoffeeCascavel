@@ -42,17 +42,17 @@ export const BUSINESS_DATA: BusinessModel = {
     {
       title: 'Acolhimento que sustenta a visita',
       description:
-        'A sensacao de cuidado aparece no atendimento, na limpeza visual da loja e na forma como os pedidos chegam a mesa.',
+        'A sensação de cuidado aparece em cada detalhe: no atendimento atencioso, na limpeza impecável da loja e na apresentação cuidadosa de cada pedido que chega à mesa.',
     },
     {
-      title: 'Cafe especial com repertorio',
+      title: 'Café especial com repertorio',
       description:
-        'A casa combina a pausa do cafe bem extraido com bebidas criativas e doces que ampliam o desejo sem parecer excessivo.',
+        'Combinamos a pausa de um café bem extraído com bebidas criativas e doces que despertam os sentidos, sem nunca perder o equilíbrio.',
     },
     {
       title: 'Boa escolha para encontro ou pausa',
       description:
-        'A atmosfera funciona tanto para uma conversa rapida no centro quanto para um momento mais calmo no meio do dia.',
+        'A atmosfera ideal tanto para uma conversa rápida no centro quanto para um momento de descompressão no meio do dia. O seu refúgio urbano em Cascavel.',
     },
   ],
   serviceModes: [

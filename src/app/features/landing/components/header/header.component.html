@@ -24,7 +24,15 @@
     <div class="header__panel" id="header-navigation" [class.header__panel--open]="menuOpen()">
       <nav class="header__nav" aria-label="Navegacao principal">
         @for (item of navigation(); track item.fragment) {
-          <a [href]="'#' + item.fragment" (click)="closeMenu()">{{ item.label }}</a>
+          <a
+            class="header__nav-link"
+            [href]="'#' + item.fragment"
+            [class.header__nav-link--active]="isActive(item.fragment)"
+            [attr.aria-current]="isActive(item.fragment) ? 'page' : null"
+            (click)="onNavigationClick(item.fragment)"
+          >
+            {{ item.label }}
+          </a>
         }
       </nav>
 
