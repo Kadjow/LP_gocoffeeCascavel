@@ -15,7 +15,7 @@
 
 @mixin focus-ring {
   &:focus-visible {
-    outline: 3px solid rgba($color-caramel, 0.32);
+    outline: 3px solid rgba($color-mint-primary, 0.6);
     outline-offset: 3px;
   }
 }

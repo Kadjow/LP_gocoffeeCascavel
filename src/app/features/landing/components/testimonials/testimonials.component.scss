@@ -12,11 +12,14 @@
   align-items: center;
   padding: 1.3rem;
   border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-strong);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(168, 230, 207, 0.18));
 }
 
 .testimonials__summary strong {
   font-family: 'Fraunces', Georgia, serif;
   font-size: clamp(2.8rem, 6vw, 4rem);
+  color: var(--color-primary);
 }
 
 .testimonials__summary h3 {
@@ -40,9 +43,21 @@
   gap: 1.1rem;
   padding: 1.35rem;
   border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.testimonials__card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(178, 216, 177, 0.56);
 }
 
 .testimonials__card span {
+  color: var(--color-accent);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.08em;

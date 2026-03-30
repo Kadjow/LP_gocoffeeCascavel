@@ -11,6 +11,7 @@ import { ProductHighlight } from '../../../../core/models/product-highlight.mode
 export class HeroComponent {
   readonly business = input.required<BusinessModel>();
   readonly products = input.required<ProductHighlight[]>();
-
-  protected readonly featuredProducts = computed(() => this.products().slice(0, 4));
+  readonly featuredProducts = computed(() => this.products().slice(0, 2));
+  readonly heroImageSrc = '/images/hero-main-user-art.png';
+  readonly heroImageAlt = 'Ilustracao artistica colorida com formas florais e organicas em estilo pintado.';
 }

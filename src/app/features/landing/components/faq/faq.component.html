@@ -1,6 +1,6 @@
 <section class="section faq">
   <div class="container faq__grid">
-    <div appRevealOnScroll="40ms">
+    <div>
       <app-section-heading
         eyebrow="Operacao da loja"
         title="Informacoes claras para visitar, retirar ou pedir sem ruido."
@@ -10,7 +10,7 @@
 
     <div class="faq__list">
       @for (item of items(); track item.question; let index = $index) {
-        <details class="faq__item surface-panel" [appRevealOnScroll]="(index * 80 + 100) + 'ms'">
+        <details class="faq__item surface-panel">
           <summary>{{ item.question }}</summary>
           <p>{{ item.answer }}</p>
         </details>

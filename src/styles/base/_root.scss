@@ -1,20 +1,27 @@
 @use '../abstracts/tokens' as *;
 
 :root {
-  --color-bg: #{$color-off-white};
-  --color-bg-secondary: #{$color-cream};
-  --color-bg-accent: #{$color-sand};
-  --color-surface: rgba(255, 249, 244, 0.82);
-  --color-surface-strong: rgba(245, 235, 221, 0.92);
-  --color-text: #{$color-espresso};
+  --color-bg: #{$color-pure-white};
+  --color-bg-secondary: #{$color-soft-gray};
+  --color-bg-accent: #{$color-soft-gray-2};
+  --color-surface: rgba(255, 255, 255, 0.92);
+  --color-surface-strong: rgba(255, 255, 255, 0.98);
+  --color-surface-muted: rgba(245, 245, 245, 0.9);
+  --color-surface-accent: rgba(168, 230, 207, 0.22);
+  --color-surface-accent-2: rgba(178, 216, 177, 0.2);
+  --color-text: #{$color-deep-black};
   --color-text-muted: #{$color-text-muted};
-  --color-text-inverse: #{$color-off-white};
+  --color-text-inverse: #{$color-pure-white};
   --color-border: #{$color-border};
   --color-border-strong: #{$color-border-strong};
-  --color-primary: #{$color-espresso};
-  --color-primary-strong: #26150c;
-  --color-secondary: #{$color-caramel};
-  --color-support: #{$color-olive};
+  --color-primary: #{$color-deep-black};
+  --color-primary-strong: #111111;
+  --color-secondary: #{$color-mint-primary};
+  --color-support: #{$color-mint-secondary};
+  --color-accent: #{$color-vibrant-green};
+  --color-overlay: rgba(0, 0, 0, 0.42);
+  --color-footer-text: rgba(255, 255, 255, 0.84);
+  --color-footer-muted: rgba(255, 255, 255, 0.66);
   --shadow-soft: #{$shadow-soft};
   --shadow-panel: #{$shadow-panel};
   --shadow-floating: #{$shadow-floating};
@@ -39,13 +46,13 @@ html {
 body {
   min-width: 320px;
   background:
-    radial-gradient(circle at top left, rgba(197, 139, 78, 0.18), transparent 30%),
-    radial-gradient(circle at 80% 0%, rgba(110, 124, 87, 0.14), transparent 24%),
-    linear-gradient(180deg, #fffaf5 0%, #fff9f4 40%, #f8efe5 100%);
+    radial-gradient(circle at top left, rgba(168, 230, 207, 0.2), transparent 30%),
+    radial-gradient(circle at 82% 4%, rgba(178, 216, 177, 0.16), transparent 24%),
+    linear-gradient(180deg, #ffffff 0%, #fafafa 46%, #f5f5f5 100%);
   color: var(--color-text);
   font-family: $font-body;
 }
 
 ::selection {
-  background: rgba($color-caramel, 0.26);
+  background: rgba($color-mint-primary, 0.42);
 }

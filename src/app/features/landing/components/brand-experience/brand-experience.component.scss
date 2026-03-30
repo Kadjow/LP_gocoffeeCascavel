@@ -15,10 +15,21 @@
   gap: 0.8rem;
   padding: clamp(1.25rem, 2vw, 1.6rem);
   border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.experience__card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(178, 216, 177, 0.58);
 }
 
 .experience__card span {
-  color: var(--color-support);
+  color: var(--color-accent);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.08em;

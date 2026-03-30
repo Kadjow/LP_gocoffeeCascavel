@@ -12,12 +12,11 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 import { BusinessModel } from '../../../../core/models/business.model';
 import { ProductHighlight } from '../../../../core/models/product-highlight.model';
-import { RevealOnScrollDirective } from '../../../../shared/motion/reveal-on-scroll.directive';
 import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/section-heading.component';
 
 @Component({
   selector: 'app-product-highlights',
-  imports: [RevealOnScrollDirective, SectionHeadingComponent],
+  imports: [SectionHeadingComponent],
   templateUrl: './product-highlights.component.html',
   styleUrl: './product-highlights.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -19,23 +19,23 @@ export const BUSINESS_DATA: BusinessModel = {
   mapUrl: buildMapsUrl(GOCOFFEE_ADDRESS),
   mapEmbedUrl: buildMapsEmbedUrl(GOCOFFEE_ADDRESS),
   rating: '4,9',
-  reviewCount: 147,
-  heroBadge: 'GoCoffee Cascavel | Pausa especial no centro de Cascavel',
-  heroHeadline: 'Uma pausa bonita, acolhedora e feita para querer ficar.',
+  reviewCount: 150,
+  heroBadge: 'GoCoffee Cascavel | A melhor experiencia do seu dia! ',
+  heroHeadline: 'Sua pausa favorita, com o sabor que o seu dia merece.',
   heroDescription:
-    'Cafe especial, frappes marcantes, cookies artesanais e atendimento atencioso em um ambiente pensado para encontro, conversa e retorno.',
+    'Cafés 100% arábica, frappes autorais e os cookies mais amados de Cascavel. Um espaço pensado para elevar o seu café de todo dia a um momento especial.',
   heroHighlights: [
     {
-      title: 'Ambiente aconchegante',
-      description: 'Uma cafeteria com clima convidativo, boa apresentacao e ritmo de permanencia.',
+      title: 'Design & Aconchego',
+      description: 'A estética moderna da GoCoffee com o conforto que você busca para um encontro ou uma pausa no trabalho.',
     },
     {
-      title: 'Cardapio com assinatura',
-      description: 'Do Carmelotto aos frappes autorais, a vitrine equilibra cafe, doces e bebidas criativas.',
+      title: 'Menu Autoral',
+      description: 'Do clássico v60 aos frappes exclusivos, nossa vitrine equilibra cafés marcantes, doces artesanais e bebidas criativas',
     },
     {
-      title: 'Experiencia local confiavel',
-      description: 'Reputacao forte, endereco central e operacao organizada para visitar, retirar ou pedir pelo iFood.',
+      title: 'Referência em Cascavel',
+      description: 'Nota 4,9 nas avaliações. Operação ágil, endereço central e o padrão de qualidade que você já conhece.',
     },
   ],
   experiencePillars: [

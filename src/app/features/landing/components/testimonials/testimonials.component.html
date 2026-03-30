@@ -1,6 +1,6 @@
 <section class="section testimonials" id="avaliacoes">
   <div class="container testimonials__grid">
-    <div appRevealOnScroll="40ms">
+    <div>
       <app-section-heading
         eyebrow="Reputacao local"
         title="Boa experiencia percebida com nota alta e elogios consistentes."
@@ -10,7 +10,7 @@
       <article class="testimonials__summary surface-panel">
         <strong>{{ business().rating }}</strong>
         <div>
-          <h3>{{ business().reviewCount }} avaliacoes observadas</h3>
+          <h3>+{{ business().reviewCount }} avaliacoes observadas</h3>
           <p>Os elogios se concentram em ambiente agradavel, atendimento e variedade do cardapio.</p>
         </div>
       </article>
@@ -18,7 +18,7 @@
 
     <div class="testimonials__list">
       @for (testimonial of testimonials(); track testimonial.name; let index = $index) {
-        <article class="testimonials__card surface-panel" [appRevealOnScroll]="(index * 90 + 90) + 'ms'">
+        <article class="testimonials__card surface-panel">
           <span>{{ testimonial.headline }}</span>
           <p>{{ testimonial.quote }}</p>
           <footer>

@@ -2,16 +2,16 @@ import { ProductHighlight } from '../../../core/models/product-highlight.model';
 
 export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
   {
-    id: 'frappe-barbie',
-    name: 'Frappe da Barbie',
-    category: 'Bebida criativa',
+    id: 'frappe-secreto',
+    name: 'Frappe de Brigadeiro',
+    category: 'Bebida Secreta',
     description:
       'Camadas marcantes, visual chamativo e perfil doce para quem quer uma pausa divertida sem perder o cuidado da casa.',
     accent: 'caramel',
   },
   {
-    id: 'frappe-caramelo',
-    name: 'Frappe com Caramelo',
+    id: 'frappe-caramelo-salgado',
+    name: 'Frappe de Caramelo Salgado',
     category: 'Assinatura gelada',
     description:
       'Textura cremosa, caramelo na medida certa e acabamento que transforma o pedido em destaque da mesa.',

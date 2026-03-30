@@ -1,6 +1,6 @@
 <section class="section products" id="produtos">
   <div class="container">
-    <div appRevealOnScroll="40ms">
+    <div>
       <app-section-heading
         eyebrow="Vitrine em destaque"
         title="Uma selecao que mistura cafe especial, assinatura da casa e desejo de voltar."
@@ -14,7 +14,6 @@
           class="products__card surface-panel"
           [class.products__card--caramel]="product.accent === 'caramel'"
           [class.products__card--olive]="product.accent === 'olive'"
-          [appRevealOnScroll]="(index * 70 + 90) + 'ms'"
         >
           <small>{{ product.category }}</small>
           <h3>{{ product.name }}</h3>
@@ -39,8 +38,6 @@
         class="products__dialog-backdrop"
         aria-label="Fechar detalhe do produto"
         (click)="closeDetails()"
-        animate.enter="dialog-backdrop-enter"
-        animate.leave="dialog-backdrop-leave"
       ></button>
 
       <section
@@ -48,8 +45,6 @@
         role="dialog"
         aria-modal="true"
         [attr.aria-labelledby]="'product-dialog-title-' + product.id"
-        animate.enter="dialog-panel-enter"
-        animate.leave="dialog-panel-leave"
       >
         <div class="products__dialog-head">
           <div>

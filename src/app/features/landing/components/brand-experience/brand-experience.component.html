@@ -1,6 +1,6 @@
 <section class="section experience" id="experiencia">
   <div class="container experience__grid">
-    <div appRevealOnScroll="40ms">
+    <div>
       <app-section-heading
         eyebrow="Experiencia da marca"
         title="Cafe especial com clima de pausa boa, encontro e retorno."
@@ -10,7 +10,7 @@
 
     <div class="experience__content">
       @for (pillar of business().experiencePillars; track pillar.title; let index = $index) {
-        <article class="experience__card surface-panel" [appRevealOnScroll]="(index * 90 + 80) + 'ms'">
+        <article class="experience__card surface-panel">
           <span>0{{ index + 1 }}</span>
           <strong>{{ pillar.title }}</strong>
           <p>{{ pillar.description }}</p>

@@ -12,27 +12,30 @@
   min-height: 18rem;
   padding: 1.35rem;
   border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
   transition:
     transform var(--transition-smooth),
     box-shadow var(--transition-smooth),
-    border-color var(--transition-smooth);
+    border-color var(--transition-smooth),
+    background-color var(--transition-smooth);
 }
 
 .products__card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-floating);
+  border-color: rgba(178, 216, 177, 0.62);
 }
 
 .products__card--caramel {
   background:
-    linear-gradient(180deg, rgba(255, 249, 244, 0.94), rgba(245, 235, 221, 0.92)),
-    linear-gradient(140deg, rgba($color-caramel, 0.18), transparent 55%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 245, 245, 0.94)),
+    linear-gradient(140deg, rgba(168, 230, 207, 0.24), transparent 55%);
 }
 
 .products__card--olive {
   background:
-    linear-gradient(180deg, rgba(255, 249, 244, 0.94), rgba(245, 235, 221, 0.92)),
-    linear-gradient(140deg, rgba($color-olive, 0.16), transparent 55%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 245, 245, 0.94)),
+    linear-gradient(140deg, rgba(178, 216, 177, 0.2), transparent 55%);
 }
 
 .products__card small,
@@ -63,6 +66,11 @@
   padding: 0;
   color: var(--color-primary);
   font-weight: 800;
+  transition: color var(--transition-base);
+}
+
+.products__link:hover {
+  color: var(--color-accent);
 }
 
 .products__dialog-layer {
@@ -74,7 +82,7 @@
 .products__dialog-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(38, 21, 12, 0.38);
+  background: var(--color-overlay);
   backdrop-filter: blur(8px);
 }
 
@@ -87,7 +95,8 @@
   gap: 1.5rem;
   padding: 1.35rem;
   border-radius: 1.8rem 1.8rem 0.9rem 0.9rem;
-  background: rgba(255, 249, 244, 0.98);
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-panel);
 }
 
@@ -106,9 +115,18 @@
 .products__dialog-close {
   padding: 0.6rem 0.85rem;
   border-radius: 999px;
-  background: rgba($color-cream, 0.9);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
   color: var(--color-text);
   font-weight: 700;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.products__dialog-close:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-accent);
 }
 
 .products__dialog-note {
@@ -116,8 +134,8 @@
   gap: 0.55rem;
   padding: 1rem 1.05rem;
   border-radius: var(--radius-md);
-  background: rgba($color-cream, 0.9);
-  border: 1px solid var(--color-border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(178, 216, 177, 0.24));
+  border: 1px solid var(--color-border-strong);
 }
 
 @include respond-up(md) {

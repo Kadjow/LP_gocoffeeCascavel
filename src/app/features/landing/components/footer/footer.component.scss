@@ -3,10 +3,11 @@
 
 .footer {
   padding-block: 2.5rem 1.5rem;
-  color: rgba(255, 249, 244, 0.88);
+  color: var(--color-footer-text);
+  border-top: 1px solid rgba(168, 230, 207, 0.24);
   background:
-    linear-gradient(180deg, rgba($color-signature, 0.98), rgba($color-espresso, 1)),
-    linear-gradient(135deg, rgba($color-caramel, 0.12), transparent);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.97), rgba(0, 0, 0, 1)),
+    linear-gradient(135deg, rgba(168, 230, 207, 0.14), transparent 58%);
 }
 
 .footer__grid {
@@ -27,7 +28,7 @@
 .footer__brand p,
 .footer__brand span,
 .footer__bar small {
-  color: rgba(255, 249, 244, 0.68);
+  color: var(--color-footer-muted);
 }
 
 .footer__nav,
@@ -42,13 +43,13 @@
 }
 
 .footer a:hover {
-  color: #fff;
+  color: var(--color-secondary);
 }
 
 .footer__bar {
   margin-top: 1.8rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 249, 244, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 @include respond-up(lg) {

@@ -1,43 +1,45 @@
 <section class="hero section" id="inicio">
   <div class="container hero__grid">
-    <div class="hero__content" animate.enter="hero-copy-enter">
-      <p class="hero__badge">{{ business().heroBadge }}</p>
-      <h1>{{ business().heroHeadline }}</h1>
-      <p class="hero__description">
-        {{ business().heroDescription }}
-      </p>
+    <div class="hero__content">
+      <div class="hero__intro">
+        <p class="hero__badge">{{ business().heroBadge }}</p>
+        <h1>{{ business().heroHeadline }}</h1>
+        <p class="hero__description">
+          {{ business().heroDescription }}
+        </p>
 
-      <div class="hero__actions">
-        <a
-          class="btn btn--primary"
-          [href]="business().whatsappUrl"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Conversar com a GoCoffee Cascavel no WhatsApp"
-        >
-          Falar no WhatsApp
-        </a>
-        <a
-          class="btn btn--secondary"
-          [href]="business().ifoodUrl"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Abrir delivery da GoCoffee Cascavel no iFood"
-        >
-          Pedir no iFood
-        </a>
+        <div class="hero__actions">
+          <a
+            class="btn btn--primary"
+            [href]="business().whatsappUrl"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Conversar com a GoCoffee Cascavel no WhatsApp"
+          >
+            Falar no WhatsApp
+          </a>
+          <a
+            class="btn btn--secondary"
+            [href]="business().ifoodUrl"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir delivery da GoCoffee Cascavel no iFood"
+          >
+            Pedir no iFood
+          </a>
+        </div>
       </div>
 
       <div class="hero__proof">
         <div class="hero__proof-card hero__proof-card--rating">
           <strong>
-            <span class="hero__proof-icon" aria-hidden="true">★</span>
+            <span class="hero__proof-icon" aria-hidden="true">&#9733;</span>
             {{ business().rating }}
           </strong>
-          <span>{{ business().reviewCount }} avaliacoes</span>
+          <span>+{{ business().reviewCount }} avaliacoes</span>
         </div>
         <div class="hero__proof-card hero__proof-card--brand">
-          <p>Cafes especiais, vitrine autoral e experiencia que só a GoCoffee tem! </p>
+          <p>Cafes especiais, vitrine autoral e experiencia que so a GoCoffee tem!</p>
         </div>
       </div>
 
@@ -51,40 +53,39 @@
       </ul>
     </div>
 
-    <div class="hero__visual" animate.enter="hero-visual-enter" aria-hidden="true">
-      <div class="hero__visual-frame">
-        <div class="hero__showcase surface-panel">
-          <div class="hero__showcase-top">
-            <span>Assinatura da casa</span>
-            <strong>Cafes, frappes e doces com apelo real</strong>
+    <div class="hero__visual">
+      <figure class="hero__media-card">
+        <div class="hero__media-frame">
+          <div class="hero__media-content">
+            <p class="hero__media-eyebrow">{{ business().subtitle }}</p>
+            <h2>{{ business().name }}</h2>
+
+            <ul class="hero__media-list">
+              @for (product of featuredProducts(); track product.id) {
+                <li>
+                  <span>{{ product.category }}</span>
+                  <strong>{{ product.name }}</strong>
+                </li>
+              }
+            </ul>
+
+            <p class="hero__media-note">{{ business().milkOptionsNote }}</p>
           </div>
 
-          <div class="hero__showcase-center">
-            <div class="hero__feature-card hero__feature-card--focus">
-              <span>Clima da visita</span>
-              <strong>Aconchego, boa apresentacao e vontade de ficar.</strong>
+          <figure class="hero__media-accent">
+            <div class="hero__media-accent-frame">
+              <img
+                class="hero__media-image"
+                [src]="heroImageSrc"
+                [alt]="heroImageAlt"
+                loading="eager"
+                decoding="async"
+              />
             </div>
-
-            <div class="hero__feature-card hero__feature-card--secondary">
-              <span>Atendimento</span>
-              <strong>Leve, atencioso e bem lembrado.</strong>
-            </div>
-          </div>
-
-          <ul class="hero__product-list">
-            @for (product of featuredProducts(); track product.id) {
-              <li>
-                {{ product.name }}
-              </li>
-            }
-          </ul>
-
-          <div class="hero__info-block">
-            <p>Consumo no local, retirada na loja e delivery oficial pelo iFood.</p>
-            <p>Todas as bebidas podem ser preparadas com leite sem lactose ou aveia (NAVEIA).</p>
-          </div>
+            <figcaption class="hero__media-pill">Ambiente real da unidade</figcaption>
+          </figure>
         </div>
-      </div>
+      </figure>
     </div>
   </div>
 </section>
