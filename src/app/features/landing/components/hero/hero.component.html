@@ -54,38 +54,20 @@
     </div>
 
     <div class="hero__visual">
-      <figure class="hero__media-card">
-        <div class="hero__media-frame">
-          <div class="hero__media-content">
-            <p class="hero__media-eyebrow">{{ business().subtitle }}</p>
-            <h2>{{ business().name }}</h2>
-
-            <ul class="hero__media-list">
-              @for (product of featuredProducts(); track product.id) {
-                <li>
-                  <span>{{ product.category }}</span>
-                  <strong>{{ product.name }}</strong>
-                </li>
-              }
-            </ul>
-
-            <p class="hero__media-note">{{ business().milkOptionsNote }}</p>
+      <h2 class="hero__visual-title">Por que conhecer a GoCoffee Cascavel?</h2>
+      <aside class="hero__visual-panel" aria-label="Apresentacao da GoCoffee Cascavel">
+        <figure class="hero__video-card">
+          <div class="hero__video-frame">
+            <video class="hero__video" controls preload="metadata" playsinline>
+              <source src="/video/video_apresentacao.MP4" type="video/mp4" />
+              Seu navegador nao suporta videos em HTML5.
+            </video>
           </div>
-
-          <figure class="hero__media-accent">
-            <div class="hero__media-accent-frame">
-              <img
-                class="hero__media-image"
-                [src]="heroImageSrc"
-                [alt]="heroImageAlt"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-            <figcaption class="hero__media-pill">Ambiente real da unidade</figcaption>
-          </figure>
-        </div>
-      </figure>
+          <figcaption class="hero__video-caption">
+            Um recorte rapido da experiencia, do ambiente e dos sabores da unidade.
+          </figcaption>
+        </figure>
+      </aside>
     </div>
   </div>
 </section>
