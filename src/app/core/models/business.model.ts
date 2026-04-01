@@ -11,9 +11,7 @@ export interface ServiceMode {
 export interface BusinessModel {
   name: string;
   subtitle: string;
-  city: string;
   address: string;
-  whatsappLabel: string;
   whatsappUrl: string;
   ifoodUrl: string;
   mapUrl: string;

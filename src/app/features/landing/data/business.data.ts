@@ -1,6 +1,5 @@
 import {
   GOCOFFEE_IFOOD_URL,
-  GOCOFFEE_WHATSAPP_LABEL,
   GOCOFFEE_WHATSAPP_URL,
 } from '../../../core/constants/external-links.constants';
 import { BusinessModel } from '../../../core/models/business.model';
@@ -12,9 +11,7 @@ const GOCOFFEE_MAP_QUERY = 'GoCoffee Cascavel, Rua Visconde de Guarapuava, 1853 
 export const BUSINESS_DATA: BusinessModel = {
   name: 'GoCoffee Cascavel',
   subtitle: 'A melhor cafeteria de Cascavel!',
-  city: 'Cascavel - PR',
   address: GOCOFFEE_ADDRESS,
-  whatsappLabel: GOCOFFEE_WHATSAPP_LABEL,
   whatsappUrl: GOCOFFEE_WHATSAPP_URL,
   ifoodUrl: GOCOFFEE_IFOOD_URL,
   mapUrl: buildMapsUrl(GOCOFFEE_MAP_QUERY),
@@ -59,15 +56,15 @@ export const BUSINESS_DATA: BusinessModel = {
   serviceModes: [
     {
       label: 'Consumo no local',
-      detail: 'Para aproveitar o ambiente, a apresentacao e o ritmo da experiencia presencial.',
+      detail: 'Para aproveitar o ambiente, a apresentacao dos pedidos e uma pausa feita com calma.',
     },
     {
       label: 'Retirada na loja',
-      detail: 'Pratico para quem passa pelo centro e quer levar o pedido com agilidade.',
+      detail: 'Ideal para quem passa pelo centro e quer levar o pedido com agilidade.',
     },
     {
       label: 'Delivery via iFood',
-      detail: 'Entrega disponivel apenas pelo canal oficial do iFood da unidade.',
+      detail: 'Entrega pelo canal oficial da unidade no iFood, com a praticidade do pedido online.',
     },
   ],
   milkOptionsNote:

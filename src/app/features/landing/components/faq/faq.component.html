@@ -9,7 +9,7 @@
     </div>
 
     <div class="faq__list">
-      @for (item of items(); track item.question; let index = $index) {
+      @for (item of items(); track item.question) {
         <details class="faq__item surface-panel">
           <summary>{{ item.question }}</summary>
           <p>{{ item.answer }}</p>

@@ -1,5 +1,4 @@
 @use '../../../../../styles/abstracts/mixins' as *;
-@use '../../../../../styles/abstracts/tokens' as *;
 
 .hero {
   padding-top: clamp(3.8rem, 6.6vw, 5.1rem);

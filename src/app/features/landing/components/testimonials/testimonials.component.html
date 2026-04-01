@@ -17,7 +17,7 @@
     </div>
 
     <div class="testimonials__list">
-      @for (testimonial of testimonials(); track testimonial.name; let index = $index) {
+      @for (testimonial of testimonials(); track testimonial.name) {
         <article class="testimonials__card surface-panel">
           <span>{{ testimonial.headline }}</span>
           <p>{{ testimonial.quote }}</p>
