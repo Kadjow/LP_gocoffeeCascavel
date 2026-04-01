@@ -7,6 +7,7 @@ import { BusinessModel } from '../../../core/models/business.model';
 import { buildMapsEmbedUrl, buildMapsUrl } from '../../../core/utils/maps.utils';
 
 const GOCOFFEE_ADDRESS = 'Rua Visconde de Guarapuava, 1853 - Centro, Cascavel - PR';
+const GOCOFFEE_MAP_QUERY = 'GoCoffee Cascavel, Rua Visconde de Guarapuava, 1853 - Centro, Cascavel - PR';
 
 export const BUSINESS_DATA: BusinessModel = {
   name: 'GoCoffee Cascavel',
@@ -16,8 +17,8 @@ export const BUSINESS_DATA: BusinessModel = {
   whatsappLabel: GOCOFFEE_WHATSAPP_LABEL,
   whatsappUrl: GOCOFFEE_WHATSAPP_URL,
   ifoodUrl: GOCOFFEE_IFOOD_URL,
-  mapUrl: buildMapsUrl(GOCOFFEE_ADDRESS),
-  mapEmbedUrl: buildMapsEmbedUrl(GOCOFFEE_ADDRESS),
+  mapUrl: buildMapsUrl(GOCOFFEE_MAP_QUERY),
+  mapEmbedUrl: buildMapsEmbedUrl(GOCOFFEE_MAP_QUERY),
   rating: '4,9',
   reviewCount: 150,
   heroBadge: 'GoCoffee Cascavel | A melhor experiencia do seu dia! ',

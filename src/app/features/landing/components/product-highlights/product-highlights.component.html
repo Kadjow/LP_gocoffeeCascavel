@@ -8,25 +8,41 @@
       />
     </div>
 
-    <div class="products__grid">
-      @for (product of products(); track product.id; let index = $index) {
-        <article
-          class="products__card surface-panel"
-          [class.products__card--caramel]="product.accent === 'caramel'"
-          [class.products__card--olive]="product.accent === 'olive'"
-        >
-          <small>{{ product.category }}</small>
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.description }}</p>
-          <button
-            type="button"
-            class="products__link"
-            (click)="openDetails(product)"
-            [attr.aria-label]="'Ver detalhes de ' + product.name"
-          >
-            Ver detalhe
-          </button>
-        </article>
+    <div class="products__showcase">
+      @for (track of productTracks(); track track.id) {
+        <div class="products__track" [class.products__track--reverse]="track.reverse">
+          <div class="products__track-inner">
+            @for (copyIndex of trackCopies; track copyIndex) {
+              <div
+                class="products__track-set"
+                [class.products__track-set--clone]="copyIndex === 1"
+                [attr.aria-hidden]="copyIndex === 1 ? 'true' : null"
+              >
+                @for (product of track.items; track product.id) {
+                  <article
+                    class="products__card surface-panel"
+                    [class.products__card--caramel]="product.accent === 'caramel'"
+                    [class.products__card--olive]="product.accent === 'olive'"
+                  >
+                    <small>{{ product.category }}</small>
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <button
+                      type="button"
+                      class="products__link"
+                      (click)="openDetails(product)"
+                      [attr.aria-label]="'Ver detalhes de ' + product.name"
+                      [attr.aria-hidden]="copyIndex === 1 ? 'true' : null"
+                      [attr.tabindex]="copyIndex === 1 ? -1 : null"
+                    >
+                      Ver detalhe
+                    </button>
+                  </article>
+                }
+              </div>
+            }
+          </div>
+        </div>
       }
     </div>
   </div>

@@ -4,6 +4,7 @@ import {
   DOCUMENT,
   HostListener,
   PLATFORM_ID,
+  computed,
   effect,
   inject,
   input,
@@ -26,6 +27,26 @@ export class ProductHighlightsComponent {
   readonly products = input.required<ProductHighlight[]>();
 
   protected readonly selectedProduct = signal<ProductHighlight | null>(null);
+  protected readonly trackCopies = [0, 1] as const;
+  protected readonly productTracks = computed(() => {
+    const allProducts = this.products();
+    const midpoint = Math.ceil(allProducts.length / 2);
+    const firstTrack = allProducts.slice(0, midpoint);
+    const secondTrack = allProducts.slice(midpoint);
+
+    return [
+      {
+        id: 'products-track-left',
+        reverse: false,
+        items: firstTrack.length > 0 ? firstTrack : allProducts,
+      },
+      {
+        id: 'products-track-right',
+        reverse: true,
+        items: secondTrack.length > 0 ? secondTrack : allProducts,
+      },
+    ];
+  });
 
   private readonly document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
