@@ -9,8 +9,8 @@
     </div>
 
     <div class="faq__list">
-      @for (item of items(); track item.question) {
-        <details class="faq__item surface-panel">
+      @for (item of items(); track item.question; let index = $index) {
+        <details class="faq__item surface-panel" appRevealOnScroll [appRevealOnScroll]="90 + (index * 70)">
           <summary>{{ item.question }}</summary>
           <p>{{ item.answer }}</p>
         </details>

@@ -2,13 +2,13 @@
   <div class="container hero__grid">
     <div class="hero__content">
       <div class="hero__intro">
-        <p class="hero__badge">{{ business().heroBadge }}</p>
-        <h1>{{ business().heroHeadline }}</h1>
-        <p class="hero__description">
+        <p class="hero__badge hero__motion-item hero__motion-item--1">{{ business().heroBadge }}</p>
+        <h1 class="hero__motion-item hero__motion-item--2">{{ business().heroHeadline }}</h1>
+        <p class="hero__description hero__motion-item hero__motion-item--3">
           {{ business().heroDescription }}
         </p>
 
-        <div class="hero__actions">
+        <div class="hero__actions hero__motion-item hero__motion-item--4">
           <a
             class="btn btn--primary"
             [href]="business().whatsappUrl"
@@ -30,20 +30,20 @@
         </div>
       </div>
 
-      <div class="hero__proof">
+      <div class="hero__proof hero__motion-item hero__motion-item--5">
         <div class="hero__proof-card">
           <strong>
             <span class="hero__proof-icon" aria-hidden="true">&#9733;</span>
-            {{ business().rating }}
+            <span appCountUp [appCountUp]="business().rating" [countUpDecimals]="1"></span>
           </strong>
-          <span>+{{ business().reviewCount }} avaliacoes</span>
+          <span><span appCountUp [appCountUp]="business().reviewCount" countUpPrefix="+"></span> avaliacoes</span>
         </div>
         <div class="hero__proof-card hero__proof-card--brand">
           <p>Cafes especiais, vitrine autoral e experiencia que so a GoCoffee tem!</p>
         </div>
       </div>
 
-      <ul class="hero__highlights">
+      <ul class="hero__highlights hero__motion-item hero__motion-item--6">
         @for (item of business().heroHighlights; track item.title) {
           <li class="surface-panel">
             <strong>{{ item.title }}</strong>
@@ -54,8 +54,8 @@
     </div>
 
     <div class="hero__visual">
-      <h2 class="hero__visual-title">Por que conhecer a <br> GoCoffee Cascavel?</h2>
-      <aside class="hero__visual-panel" aria-label="Apresentacao da GoCoffee Cascavel">
+      <h2 class="hero__visual-title hero__motion-visual hero__motion-visual--title">Por que conhecer a <br> GoCoffee Cascavel?</h2>
+      <aside class="hero__visual-panel hero__motion-visual hero__motion-visual--panel" aria-label="Apresentacao da GoCoffee Cascavel">
         <figure class="hero__video-card">
           <div class="hero__video-frame">
             <video class="hero__video" controls poster="/images/gocoffee-icon.png" preload="metadata" playsinline>

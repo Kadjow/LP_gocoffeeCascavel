@@ -7,15 +7,15 @@
         description="Chegar é facil, ficar é prazeroso: consumo no local, retirada agil e delivery oficial no iFood para acompanhar seu ritmo."
       />
 
-      <div class="location__details surface-panel">
+      <div class="location__details surface-panel" appRevealOnScroll [appRevealOnScroll]="90">
         <div>
           <small>Endereco</small>
           <strong>{{ business().address }}</strong>
         </div>
 
         <div class="location__modes">
-          @for (mode of business().serviceModes; track mode.label) {
-            <article>
+          @for (mode of business().serviceModes; track mode.label; let index = $index) {
+            <article appRevealOnScroll [appRevealOnScroll]="140 + (index * 70)">
               <strong>{{ mode.label }}</strong>
               <p>{{ mode.detail }}</p>
             </article>
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="location__map surface-panel">
+    <div class="location__map surface-panel" appRevealOnScroll [appRevealOnScroll]="160">
       <iframe
         title="Mapa da GoCoffee Cascavel"
         loading="lazy"

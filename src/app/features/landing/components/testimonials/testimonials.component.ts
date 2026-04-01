@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { BusinessModel } from '../../../../core/models/business.model';
 import { Testimonial } from '../../../../core/models/testimonial.model';
+import { CountUpDirective } from '../../../../shared/motion/count-up.directive';
+import { RevealOnScrollDirective } from '../../../../shared/motion/reveal-on-scroll.directive';
 import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/section-heading.component';
 
 @Component({
   selector: 'app-testimonials',
-  imports: [SectionHeadingComponent],
+  imports: [SectionHeadingComponent, CountUpDirective, RevealOnScrollDirective],
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

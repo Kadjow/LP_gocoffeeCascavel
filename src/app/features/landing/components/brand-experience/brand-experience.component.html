@@ -10,7 +10,7 @@
 
     <div class="experience__content">
       @for (pillar of business().experiencePillars; track pillar.title; let index = $index) {
-        <article class="experience__card surface-panel">
+        <article class="experience__card surface-panel" appRevealOnScroll [appRevealOnScroll]="100 + (index * 70)">
           <span>0{{ index + 1 }}</span>
           <strong>{{ pillar.title }}</strong>
           <p>{{ pillar.description }}</p>

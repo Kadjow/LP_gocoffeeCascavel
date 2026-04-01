@@ -215,6 +215,79 @@ video:-webkit-full-screen::backdrop {
   letter-spacing: 0.02em;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .hero__motion-item,
+  .hero__motion-visual {
+    opacity: 0;
+    animation: hero-enter 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--hero-motion-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .hero__motion-item {
+    --hero-motion-offset-x: 0;
+    --hero-motion-offset-y: 16px;
+  }
+
+  .hero__motion-visual {
+    --hero-motion-offset-x: 8px;
+    --hero-motion-offset-y: 18px;
+  }
+
+  .hero__motion-item--1 {
+    --hero-motion-delay: 40ms;
+  }
+
+  .hero__motion-item--2 {
+    --hero-motion-delay: 120ms;
+  }
+
+  .hero__motion-item--3 {
+    --hero-motion-delay: 190ms;
+  }
+
+  .hero__motion-item--4 {
+    --hero-motion-delay: 270ms;
+  }
+
+  .hero__motion-item--5 {
+    --hero-motion-delay: 340ms;
+  }
+
+  .hero__motion-item--6 {
+    --hero-motion-delay: 410ms;
+  }
+
+  .hero__motion-visual--title {
+    --hero-motion-delay: 240ms;
+  }
+
+  .hero__motion-visual--panel {
+    --hero-motion-delay: 320ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__motion-item,
+  .hero__motion-visual {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--hero-motion-offset-x, 0), var(--hero-motion-offset-y, 16px), 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @include respond-up(lg) {
   .hero__grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
