@@ -11,7 +11,7 @@ const GOCOFFEE_MAP_QUERY = 'GoCoffee Cascavel, Rua Visconde de Guarapuava, 1853 
 
 export const BUSINESS_DATA: BusinessModel = {
   name: 'GoCoffee Cascavel',
-  subtitle: 'Cafeteria especial no centro',
+  subtitle: 'A melhor cafeteria de Cascavel!',
   city: 'Cascavel - PR',
   address: GOCOFFEE_ADDRESS,
   whatsappLabel: GOCOFFEE_WHATSAPP_LABEL,

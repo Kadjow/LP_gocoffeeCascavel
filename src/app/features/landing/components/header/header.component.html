@@ -1,7 +1,15 @@
 <header class="header" [class.header--scrolled]="scrolled()" [class.header--open]="menuOpen()">
   <div class="container header__inner">
     <a class="header__brand" href="#inicio" aria-label="Voltar para o inicio">
-      <span class="header__brand-mark">GoCoffee</span>
+      <span class="header__brand-mark">
+        <img
+          class="header__brand-logo"
+          src="/images/gocoffee-icon.png"
+          alt="Icone da GoCoffee Cascavel"
+          decoding="async"
+          fetchpriority="high"
+        >
+      </span>
       <span class="header__brand-copy">
         <strong>{{ business().name }}</strong>
         <small>{{ business().subtitle }}</small>
