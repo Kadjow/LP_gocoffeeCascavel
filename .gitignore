@@ -42,3 +42,8 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+
+public/video/video_apresentacao.MP4
+public/video/*.MP4
+public/video/*.mp4

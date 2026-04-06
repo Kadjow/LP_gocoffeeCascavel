@@ -1,0 +1,32 @@
+.motion-reveal {
+  --motion-delay: 0ms;
+  --motion-distance: 18px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-reveal {
+    opacity: 0;
+    transform: translate3d(0, var(--motion-distance), 0);
+    transition:
+      opacity 460ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--motion-delay);
+  }
+
+  .motion-reveal:not(.is-visible) {
+    will-change: opacity, transform;
+  }
+
+  .motion-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none !important;
+  }
+}
