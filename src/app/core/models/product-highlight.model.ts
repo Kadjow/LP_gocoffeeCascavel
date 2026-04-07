@@ -4,4 +4,6 @@ export interface ProductHighlight {
   category: string;
   description: string;
   accent: 'caramel' | 'olive' | 'cream';
+  imageKey?: string;
+  imageAlt?: string;
 }

@@ -13,6 +13,10 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 import { BusinessModel } from '../../../../core/models/business.model';
 import { ProductHighlight } from '../../../../core/models/product-highlight.model';
+import {
+  buildProductDetailImageAlt,
+  buildProductDetailImageUrl,
+} from '../../../../core/utils/product-images.utils';
 import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/section-heading.component';
 
 @Component({
@@ -27,7 +31,26 @@ export class ProductHighlightsComponent {
   readonly products = input.required<ProductHighlight[]>();
 
   protected readonly selectedProduct = signal<ProductHighlight | null>(null);
+  protected readonly detailImageFailed = signal(false);
   protected readonly trackCopies = [0, 1] as const;
+  protected readonly selectedProductDetailImage = computed(() => {
+    const product = this.selectedProduct();
+
+    if (!product || this.detailImageFailed()) {
+      return null;
+    }
+
+    const src = buildProductDetailImageUrl(product.imageKey);
+
+    if (!src) {
+      return null;
+    }
+
+    return {
+      src,
+      alt: buildProductDetailImageAlt(product),
+    };
+  });
   protected readonly productTracks = computed(() => {
     const allProducts = this.products();
     const midpoint = Math.ceil(allProducts.length / 2);
@@ -62,11 +85,17 @@ export class ProductHighlightsComponent {
   }
 
   protected openDetails(product: ProductHighlight): void {
+    this.detailImageFailed.set(false);
     this.selectedProduct.set(product);
   }
 
   protected closeDetails(): void {
+    this.detailImageFailed.set(false);
     this.selectedProduct.set(null);
+  }
+
+  protected onDetailImageError(): void {
+    this.detailImageFailed.set(true);
   }
 
   @HostListener('window:keydown.escape')
