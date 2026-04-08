@@ -7,6 +7,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     category: 'Bebidas Quentes',
     description: 'Café espresso misturado a leite vaporizado e chocolate.',
     accent: 'olive',
+    imageKey: 'quentes/cafe_mocha',
+    imageAlt: 'Copo de Cafe Mocha com chocolate e leite vaporizado.',
   },
   {
     id: 'cafe-carmelotto',
@@ -14,6 +16,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     category: 'Bebidas Quentes',
     description: 'Uma leitura mais indulgente do café da casa, com leite vaporizado e caramelo.',
     accent: 'olive',
+    imageKey: 'quentes/cafe_carmelotto',
+    imageAlt: 'Copo de Cafe Carmelotto finalizado com caramelo.',
   },
   {
     id: 'cappuccino-italiano',
@@ -21,6 +25,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     category: 'Bebidas Quentes',
     description: 'Café espresso duplo com leite vaporizado e um toque opcional de canela.',
     accent: 'olive',
+    imageKey: 'quentes/cap_ita',
+    imageAlt: 'Xicara de Cappuccino Italiano com espuma cremosa.',
   },
   {
     id: 'cappuccino-brasileiro',
@@ -35,6 +41,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     category: 'Bebidas Quentes',
     description: 'Chá preto com ricas especiarias indianas e leite vaporizado (adoçado).',
     accent: 'olive',
+    imageKey: 'quentes/chai_latte',
+    imageAlt: 'Copo de Chai Latte cremoso com especiarias.',
   },
   {
     id: 'cappuccino-go-coffee',
@@ -49,6 +57,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     category: 'Bebidas Quentes',
     description: 'Café espresso duplo, leite vaporizado, o dobro de chocolate e chantilly.',
     accent: 'olive',
+    imageKey: 'quentes/ultra_mocha',
+    imageAlt: 'Bebida Ultra Mocha com chantilly e cobertura de chocolate.',
   },
   {
     id: 'ultra-carmelotto',
