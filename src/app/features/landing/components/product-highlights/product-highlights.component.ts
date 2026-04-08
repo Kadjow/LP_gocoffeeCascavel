@@ -21,7 +21,7 @@ import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/s
 
 @Component({
   selector: 'app-product-highlights',
-  imports: [SectionHeadingComponent],
+  imports: [SectionHeadingComponent, RevealOnScrollDirective],
   templateUrl: './product-highlights.component.html',
   styleUrl: './product-highlights.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

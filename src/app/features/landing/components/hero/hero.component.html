@@ -2,13 +2,13 @@
   <div class="container hero__grid">
     <div class="hero__content">
       <div class="hero__intro">
-        <p class="hero__badge">{{ business().heroBadge }}</p>
-        <h1>{{ business().heroHeadline }}</h1>
-        <p class="hero__description">
+        <p class="hero__badge hero__motion-item hero__motion-item--1">{{ business().heroBadge }}</p>
+        <h1 class="hero__motion-item hero__motion-item--2">{{ business().heroHeadline }}</h1>
+        <p class="hero__description hero__motion-item hero__motion-item--3">
           {{ business().heroDescription }}
         </p>
 
-        <div class="hero__actions">
+        <div class="hero__actions hero__motion-item hero__motion-item--4">
           <a
             class="btn btn--primary"
             [href]="business().whatsappUrl"
@@ -30,20 +30,20 @@
         </div>
       </div>
 
-      <div class="hero__proof">
-        <div class="hero__proof-card hero__proof-card--rating">
+      <div class="hero__proof hero__motion-item hero__motion-item--5">
+        <div class="hero__proof-card">
           <strong>
             <span class="hero__proof-icon" aria-hidden="true">&#9733;</span>
-            {{ business().rating }}
+            <span appCountUp [appCountUp]="business().rating" [countUpDecimals]="1"></span>
           </strong>
-          <span>+{{ business().reviewCount }} avaliacoes</span>
+          <span><span appCountUp [appCountUp]="business().reviewCount" countUpPrefix="+"></span> avaliacoes</span>
         </div>
         <div class="hero__proof-card hero__proof-card--brand">
           <p>Cafes especiais, vitrine autoral e experiencia que so a GoCoffee tem!</p>
         </div>
       </div>
 
-      <ul class="hero__highlights">
+      <ul class="hero__highlights hero__motion-item hero__motion-item--6">
         @for (item of business().heroHighlights; track item.title) {
           <li class="surface-panel">
             <strong>{{ item.title }}</strong>
@@ -54,38 +54,22 @@
     </div>
 
     <div class="hero__visual">
-      <figure class="hero__media-card">
-        <div class="hero__media-frame">
-          <div class="hero__media-content">
-            <p class="hero__media-eyebrow">{{ business().subtitle }}</p>
-            <h2>{{ business().name }}</h2>
-
-            <ul class="hero__media-list">
-              @for (product of featuredProducts(); track product.id) {
-                <li>
-                  <span>{{ product.category }}</span>
-                  <strong>{{ product.name }}</strong>
-                </li>
-              }
-            </ul>
-
-            <p class="hero__media-note">{{ business().milkOptionsNote }}</p>
+      <h2 class="hero__visual-title hero__motion-visual hero__motion-visual--title">Por que conhecer a <br> GoCoffee Cascavel?</h2>
+      <aside class="hero__visual-panel hero__motion-visual hero__motion-visual--panel" aria-label="Apresentacao da GoCoffee Cascavel">
+        <figure class="hero__video-card">
+          <div class="hero__video-frame">
+            <iframe
+              src="https://player.mux.com/Eaq3p2Nn1o5zWjavBCwLPY7ePRQsgF0000006NKZRfb2c8?metadata-video-title=Apresenta%C3%A7%C3%A3o+GoCoffee&video-title=Apresenta%C3%A7%C3%A3o+GoCoffee"
+              style="width: 100%; border: none; aspect-ratio: 9/16;"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+              allowfullscreen
+            ></iframe>
           </div>
-
-          <figure class="hero__media-accent">
-            <div class="hero__media-accent-frame">
-              <img
-                class="hero__media-image"
-                [src]="heroImageSrc"
-                [alt]="heroImageAlt"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-            <figcaption class="hero__media-pill">Ambiente real da unidade</figcaption>
-          </figure>
-        </div>
-      </figure>
+          <figcaption class="hero__video-caption">
+            Um recorte rapido da experiencia, do ambiente e dos sabores da unidade.
+          </figcaption>
+        </figure>
+      </aside>
     </div>
   </div>
 </section>

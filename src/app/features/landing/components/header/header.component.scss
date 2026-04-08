@@ -83,41 +83,65 @@
 .header__brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.85rem;
+  justify-content: flex-start;
+  gap: clamp(0.58rem, 1.4vw, 0.86rem);
   min-width: 0;
 }
 
 .header__brand-mark {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 3.3rem;
-  min-height: 3.3rem;
-  padding-inline: 0.9rem;
-  border-radius: 1.1rem;
-  border: 1px solid rgba(168, 230, 207, 0.48);
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.96), rgba(20, 20, 20, 0.92));
-  color: var(--color-text-inverse);
-  font-family: $font-display;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 16px 32px -20px rgba(0, 0, 0, 0.62);
+  width: clamp(2.3rem, 7vw, 2.75rem);
+  height: clamp(2.3rem, 7vw, 2.75rem);
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+  box-shadow: none;
+  overflow: hidden;
+  line-height: 0;
+  transition:
+    border-color var(--transition-base);
+}
+
+.header__brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  vertical-align: middle;
 }
 
 .header__brand-copy {
   display: grid;
-  gap: 0.1rem;
-  line-height: 1.1;
+  justify-items: start;
+  align-content: center;
+  gap: 0.12rem;
+  min-width: 0;
+  line-height: 1.06;
 }
 
 .header__brand-copy strong {
-  font-size: 0.98rem;
-  letter-spacing: -0.02em;
+  font-family: $font-display;
+  font-size: clamp(0.99rem, 2.35vw, 1.1rem);
+  letter-spacing: -0.015em;
+  color: rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header__brand-copy small {
-  color: var(--color-text-muted);
-  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.64);
+  font-size: clamp(0.7rem, 1.75vw, 0.76rem);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header__toggle {
@@ -273,6 +297,23 @@
     gap: 2rem;
   }
 
+  .header__brand {
+    gap: clamp(0.62rem, 0.9vw, 0.9rem);
+  }
+
+  .header__brand-mark {
+    width: clamp(2.44rem, 2.6vw, 2.75rem);
+    height: clamp(2.44rem, 2.6vw, 2.75rem);
+  }
+
+  .header__brand-copy strong {
+    font-size: clamp(1.03rem, 1.1vw, 1.16rem);
+  }
+
+  .header__brand-copy small {
+    font-size: clamp(0.72rem, 0.65vw, 0.79rem);
+  }
+
   .header__toggle {
     display: none;
   }
@@ -307,5 +348,24 @@
 
   .header__actions .btn {
     width: auto;
+  }
+}
+
+@media (max-width: 31rem) {
+  .header__brand {
+    gap: 0.48rem;
+  }
+
+  .header__brand-mark {
+    width: clamp(2.25rem, 10.2vw, 2.5rem);
+    height: clamp(2.25rem, 10.2vw, 2.5rem);
+  }
+
+  .header__brand-copy strong {
+    font-size: 0.94rem;
+  }
+
+  .header__brand-copy small {
+    display: none;
   }
 }

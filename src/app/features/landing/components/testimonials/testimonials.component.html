@@ -7,10 +7,10 @@
         description="A prova social reforca ambiente aconchegante, atendimento atencioso e boa variedade de cafes e bebidas criativas."
       />
 
-      <article class="testimonials__summary surface-panel">
-        <strong>{{ business().rating }}</strong>
+      <article class="testimonials__summary surface-panel" appRevealOnScroll [appRevealOnScroll]="90">
+        <strong><span appCountUp [appCountUp]="business().rating" [countUpDecimals]="1"></span></strong>
         <div>
-          <h3>+{{ business().reviewCount }} avaliacoes observadas</h3>
+          <h3><span appCountUp [appCountUp]="business().reviewCount" countUpPrefix="+"></span> avaliacoes observadas</h3>
           <p>Os elogios se concentram em ambiente agradavel, atendimento e variedade do cardapio.</p>
         </div>
       </article>
@@ -18,7 +18,7 @@
 
     <div class="testimonials__list">
       @for (testimonial of testimonials(); track testimonial.name; let index = $index) {
-        <article class="testimonials__card surface-panel">
+        <article class="testimonials__card surface-panel" appRevealOnScroll [appRevealOnScroll]="120 + (index * 70)">
           <span>{{ testimonial.headline }}</span>
           <p>{{ testimonial.quote }}</p>
           <footer>

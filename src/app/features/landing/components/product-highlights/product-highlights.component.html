@@ -9,8 +9,13 @@
     </div>
 
     <div class="products__showcase">
-      @for (track of productTracks(); track track.id) {
-        <div class="products__track" [class.products__track--reverse]="track.reverse">
+      @for (track of productTracks(); track track.id; let trackIndex = $index) {
+        <div
+          class="products__track"
+          [class.products__track--reverse]="track.reverse"
+          appRevealOnScroll
+          [appRevealOnScroll]="80 + (trackIndex * 90)"
+        >
           <div class="products__track-inner">
             @for (copyIndex of trackCopies; track copyIndex) {
               <div
