@@ -368,6 +368,14 @@ const validateProductHighlights = (products: ProductHighlight[]): void => {
       throw new Error(`Accent invalido para ${product.id}: ${product.accent}`);
     }
 
+    if (product.imageKey !== undefined && product.imageKey.trim().length === 0) {
+      throw new Error(`imageKey invalida para ${product.id}`);
+    }
+
+    if (product.imageAlt !== undefined && product.imageAlt.trim().length === 0) {
+      throw new Error(`imageAlt invalido para ${product.id}`);
+    }
+
     ids.add(product.id);
   }
 };
