@@ -8,24 +8,21 @@ export function buildProductDetailImageUrl(imageKey?: string | null): string | n
     return null;
   }
 
-  const baseUrl = PRODUCT_DETAIL_IMAGE_CONFIG.baseUrl.trim().replace(/\/+$/, '');
+  const basePath = PRODUCT_DETAIL_IMAGE_CONFIG.basePath.trim().replace(/\/+$/, '');
+  const extension = PRODUCT_DETAIL_IMAGE_CONFIG.defaultExtension.trim().replace(/^\.+/, '');
   const encodedKey = normalizedKey
     .split('/')
     .filter((segment) => segment.length > 0)
     .map((segment) => encodeURIComponent(segment))
     .join('/');
 
-  try {
-    const url = new URL(`${baseUrl}/${encodedKey}`);
-
-    for (const [param, value] of Object.entries(PRODUCT_DETAIL_IMAGE_CONFIG.defaultParams)) {
-      url.searchParams.set(param, value);
-    }
-
-    return url.toString();
-  } catch {
+  if (!encodedKey || !extension) {
     return null;
   }
+
+  const hasExplicitExtension = /\.[a-z0-9]+$/i.test(encodedKey);
+
+  return `${basePath}/${hasExplicitExtension ? encodedKey : `${encodedKey}.${extension}`}`;
 }
 
 export function buildProductDetailImageAlt(product: ProductHighlight): string {

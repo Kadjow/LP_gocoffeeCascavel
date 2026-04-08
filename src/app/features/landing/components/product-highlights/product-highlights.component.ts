@@ -17,6 +17,7 @@ import {
   buildProductDetailImageAlt,
   buildProductDetailImageUrl,
 } from '../../../../core/utils/product-images.utils';
+import { RevealOnScrollDirective } from '../../../../shared/motion/reveal-on-scroll.directive';
 import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/section-heading.component';
 
 @Component({
