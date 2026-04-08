@@ -71,6 +71,21 @@ export class ProductHighlightsComponent {
       },
     ];
   });
+  protected readonly productCategories = computed(() => {
+    const groups = new Map<string, ProductHighlight[]>();
+
+    for (const product of this.products()) {
+      const items = groups.get(product.category) ?? [];
+      items.push(product);
+      groups.set(product.category, items);
+    }
+
+    return Array.from(groups.entries()).map(([category, items]) => ({
+      id: `products-category-${category.toLowerCase().replace(/\s+/g, '-')}`,
+      title: category,
+      items,
+    }));
+  });
 
   private readonly document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);

@@ -8,7 +8,41 @@
       />
     </div>
 
-    <div class="products__showcase">
+    <div class="products__showcase products__showcase--mobile">
+      @for (category of productCategories(); track category.id) {
+        <section class="products__category" [attr.aria-labelledby]="category.id">
+          <div class="products__category-head">
+            <p class="products__category-title" [id]="category.id">{{ category.title }}</p>
+          </div>
+
+          <div class="products__track products__track--mobile" [attr.aria-labelledby]="category.id">
+            <div class="products__track-set">
+              @for (product of category.items; track product.id) {
+                <article
+                  class="products__card surface-panel"
+                  [class.products__card--caramel]="product.accent === 'caramel'"
+                  [class.products__card--olive]="product.accent === 'olive'"
+                >
+                  <small>{{ product.category }}</small>
+                  <h3>{{ product.name }}</h3>
+                  <p>{{ product.description }}</p>
+                  <button
+                    type="button"
+                    class="products__link"
+                    (click)="openDetails(product)"
+                    [attr.aria-label]="'Ver detalhes de ' + product.name"
+                  >
+                    Ver detalhe
+                  </button>
+                </article>
+              }
+            </div>
+          </div>
+        </section>
+      }
+    </div>
+
+    <div class="products__showcase products__showcase--desktop">
       @for (track of productTracks(); track track.id; let trackIndex = $index) {
         <div
           class="products__track"

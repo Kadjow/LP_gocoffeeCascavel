@@ -6,6 +6,35 @@
   gap: 1rem;
 }
 
+.products__showcase--desktop {
+  display: none;
+}
+
+.products__showcase--mobile {
+  gap: 1.5rem;
+}
+
+.products__category {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.products__category-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.products__category-title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .products__track {
   position: relative;
   overflow-x: auto;
@@ -14,7 +43,9 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
   scroll-behavior: smooth;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
+  overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -44,9 +75,9 @@
 .products__card {
   display: grid;
   gap: 0.85rem;
-  flex: 0 0 clamp(15rem, 72vw, 18.5rem);
-  min-height: 18rem;
-  padding: 1.35rem;
+  flex: 0 0 82%;
+  min-height: 16.5rem;
+  padding: 1.1rem;
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
@@ -108,6 +139,32 @@
 
 .products__link:hover {
   color: var(--color-accent);
+}
+
+.products__track--mobile .products__card h3 {
+  font-size: clamp(1.35rem, 5vw, 1.55rem);
+}
+
+.products__track--mobile .products__card small {
+  display: none;
+}
+
+.products__track--mobile .products__card p {
+  font-size: 0.96rem;
+  line-height: 1.68;
+}
+
+.products__track--mobile .products__link {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.8rem 1rem;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(178, 216, 177, 0.16);
+  touch-action: manipulation;
 }
 
 .products__dialog-layer {
@@ -233,11 +290,23 @@
 
 @include respond-up(md) {
   .products__card {
-    flex-basis: clamp(16rem, 44vw, 20rem);
+    flex-basis: 76%;
+  }
+
+  .products__track--mobile .products__card {
+    max-width: 25rem;
   }
 }
 
 @include respond-up(lg) {
+  .products__showcase--mobile {
+    display: none;
+  }
+
+  .products__showcase--desktop {
+    display: grid;
+  }
+
   .products__showcase {
     gap: 1.2rem;
   }
@@ -290,6 +359,8 @@
 
   .products__card {
     flex-basis: clamp(17rem, 24vw, 20rem);
+    min-height: 18rem;
+    padding: 1.35rem;
   }
 }
 
