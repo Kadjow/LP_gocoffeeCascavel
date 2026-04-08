@@ -33,6 +33,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     name: 'Cappuccino Brasileiro',
     category: 'Bebidas Quentes',
     description: 'Bebida adoçada composta por café, leite vaporizado, chocolate e canela.',
+    imageKey: 'quentes/cap_bra',
+    imageAlt: 'Xicara de Cappuccino Brasileiro com chocolate e canela.',
     accent: 'olive',
   },
   {
@@ -49,6 +51,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     name: 'Cappuccino Go Coffee',
     category: 'Bebidas Quentes',
     description: 'Café espresso encorpado com leite vaporizado, caramelo, canela e chantilly.',
+    imageKey: 'quentes/cap_gocoffee',
+    imageAlt: 'Copo de Cappuccino Go Coffee com chantilly e caramelo.',
     accent: 'olive',
   },
   {
@@ -65,6 +69,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     name: 'Ultra Carmelotto',
     category: 'Bebidas Quentes',
     description: 'Café espresso duplo, leite vaporizado, o dobro de caramelo e chantilly.',
+    imageKey: 'quentes/ultra_car',
+    imageAlt: 'Bebida Ultra Carmelotto com chantilly e cobertura de caramelo.',
     accent: 'olive',
   },
   {
@@ -72,6 +78,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     name: 'Chocolate Quente',
     category: 'Bebidas Quentes',
     description: 'Chocolate quente cremoso e reconfortante.',
+    imageKey: 'quentes/choc_quente', 
+    imageAlt: 'Copo de Chocolate Quente com espuma cremosa.',
     accent: 'olive',
   },
   {
@@ -79,6 +87,8 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     name: 'Chocomallow Go Coffee',
     category: 'Bebidas Quentes',
     description: 'Chocolate quente cremoso finalizado com marshmallow tostado.',
+    imageKey: 'quentes/chocomallow',
+    imageAlt: 'Copo de Chocomallow Go Coffee com marshmallow tostado.',
     accent: 'olive',
   },
   {
