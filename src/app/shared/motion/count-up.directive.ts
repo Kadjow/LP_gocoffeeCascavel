@@ -16,10 +16,12 @@ import {
 export class CountUpDirective implements AfterViewInit, OnDestroy {
   readonly appCountUp = input.required<number | string>();
   readonly countUpDuration = input(820);
+  readonly countUpDelay = input(0);
   readonly countUpDecimals = input(0);
   readonly countUpPrefix = input('');
   readonly countUpSuffix = input('');
   readonly countUpLocale = input('pt-BR');
+  readonly countUpEasing = input<'ease-out-cubic' | 'ease-in-out-cubic'>('ease-out-cubic');
 
   private readonly elementRef = inject(ElementRef<HTMLElement>);
   private readonly renderer = inject(Renderer2);
@@ -81,11 +83,19 @@ export class CountUpDirective implements AfterViewInit, OnDestroy {
 
   private animateToTarget(target: number): void {
     const duration = Math.max(240, this.countUpDuration());
+    const delay = Math.max(0, this.countUpDelay());
     const startedAt = performance.now();
 
     const step = (timestamp: number): void => {
-      const progress = Math.min((timestamp - startedAt) / duration, 1);
-      const eased = this.easeOutCubic(progress);
+      const elapsed = timestamp - startedAt - delay;
+
+      if (elapsed < 0) {
+        this.animationFrameId = requestAnimationFrame(step);
+        return;
+      }
+
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = this.ease(progress);
       this.renderValue(target * eased);
 
       if (progress < 1) {
@@ -118,7 +128,13 @@ export class CountUpDirective implements AfterViewInit, OnDestroy {
     return Number.isFinite(parsed) ? parsed : 0;
   }
 
-  private easeOutCubic(progress: number): number {
+  private ease(progress: number): number {
+    if (this.countUpEasing() === 'ease-in-out-cubic') {
+      return progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    }
+
     return 1 - Math.pow(1 - progress, 3);
   }
 

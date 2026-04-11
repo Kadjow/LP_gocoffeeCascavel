@@ -34,9 +34,26 @@
         <div class="hero__proof-card">
           <strong>
             <span class="hero__proof-icon" aria-hidden="true">&#9733;</span>
-            <span appCountUp [appCountUp]="business().rating" [countUpDecimals]="1"></span>
+            <span
+              appCountUp
+              [appCountUp]="business().rating"
+              [countUpDecimals]="1"
+              [countUpDuration]="1400"
+              [countUpDelay]="120"
+              countUpEasing="ease-in-out-cubic"
+            ></span>
           </strong>
-          <span><span appCountUp [appCountUp]="business().reviewCount" countUpPrefix="+"></span> avaliacoes</span>
+          <span>
+            <span
+              appCountUp
+              [appCountUp]="business().reviewCount"
+              countUpPrefix="+"
+              [countUpDuration]="1700"
+              [countUpDelay]="180"
+              countUpEasing="ease-in-out-cubic"
+            ></span>
+            avaliacoes
+          </span>
         </div>
         <div class="hero__proof-card hero__proof-card--brand">
           <p>Cafes especiais, vitrine autoral e experiencia que so a GoCoffee tem!</p>
