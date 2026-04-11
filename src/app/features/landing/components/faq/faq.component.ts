@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 import { FaqItem } from '../../../../core/models/faq-item.model';
 import { RevealOnScrollDirective } from '../../../../shared/motion/reveal-on-scroll.directive';
 import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/section-heading.component';
@@ -12,4 +12,9 @@ import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/s
 })
 export class FaqComponent {
   readonly items = input.required<FaqItem[]>();
+  protected readonly openIndex = signal<number | null>(null);
+
+  protected toggleItem(index: number): void {
+    this.openIndex.update((currentIndex) => (currentIndex === index ? null : index));
+  }
 }
