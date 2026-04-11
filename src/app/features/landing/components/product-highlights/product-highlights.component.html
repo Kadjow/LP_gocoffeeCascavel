@@ -145,10 +145,12 @@
 
         <p class="products__dialog-copy">{{ product.description }}</p>
 
-        <div class="products__dialog-note">
-          <span>Observacao fixa</span>
-          <p>{{ business().milkOptionsNote }}</p>
-        </div>
+        @if (selectedProductShowsMilkOptionsNote()) {
+          <div class="products__dialog-note">
+            <span>Observacao fixa</span>
+            <p>{{ business().milkOptionsNote }}</p>
+          </div>
+        }
       </section>
     </div>
   }
