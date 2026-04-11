@@ -1,4 +1,5 @@
 import { ProductHighlight } from '../../../core/models/product-highlight.model';
+import { PRODUCT_CATEGORY_SET } from '../../../core/utils/product-categories.utils';
 
 export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
   {
@@ -205,13 +206,6 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     accent: 'olive',
   },
   {
-    id: 'frappe-chocomenta',
-    name: 'Frappe Chocomenta',
-    category: 'Frappes',
-    description: 'Bebida gelada com chocolate e toque refrescante de menta.',
-    accent: 'olive',
-  },
-  {
     id: 'frappe-cookies-and-cream',
     name: 'Frappe Cookies and Cream',
     category: 'Frappes',
@@ -353,14 +347,6 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
   },
 ];
 
-const VALID_CATEGORIES = new Set([
-  'Bebidas Quentes',
-  'Bebidas Geladas',
-  'Frappes',
-  'Matcha',
-  'Doces',
-  'Salgados',
-]);
 const VALID_ACCENTS = new Set<ProductHighlight['accent']>(['caramel', 'olive', 'cream']);
 
 const validateProductHighlights = (products: ProductHighlight[]): void => {
@@ -380,7 +366,7 @@ const validateProductHighlights = (products: ProductHighlight[]): void => {
       throw new Error(`ID de produto duplicado: ${product.id}`);
     }
 
-    if (!VALID_CATEGORIES.has(product.category)) {
+    if (!PRODUCT_CATEGORY_SET.has(product.category)) {
       throw new Error(`Categoria invalida para ${product.id}: ${product.category}`);
     }
 

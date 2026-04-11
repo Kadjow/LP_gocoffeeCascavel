@@ -13,6 +13,7 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 import { BusinessModel } from '../../../../core/models/business.model';
 import { ProductHighlight } from '../../../../core/models/product-highlight.model';
+import { isBeverageCategory } from '../../../../core/utils/product-categories.utils';
 import {
   buildProductDetailImageAlt,
   buildProductDetailImageUrl,
@@ -34,6 +35,11 @@ export class ProductHighlightsComponent {
   protected readonly selectedProduct = signal<ProductHighlight | null>(null);
   protected readonly detailImageFailed = signal(false);
   protected readonly trackCopies = [0, 1] as const;
+  protected readonly selectedProductShowsMilkOptionsNote = computed(() => {
+    const product = this.selectedProduct();
+
+    return product ? isBeverageCategory(product.category) : false;
+  });
   protected readonly selectedProductDetailImage = computed(() => {
     const product = this.selectedProduct();
 

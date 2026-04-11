@@ -73,6 +73,7 @@
 }
 
 .products__card {
+  --products-card-hover-duration: 200ms;
   display: grid;
   gap: 0.85rem;
   flex: 0 0 82%;
@@ -82,16 +83,10 @@
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   transition:
-    transform var(--transition-smooth),
-    box-shadow var(--transition-smooth),
-    border-color var(--transition-smooth),
-    background-color var(--transition-smooth);
-}
-
-.products__card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-floating);
-  border-color: rgba(178, 216, 177, 0.62);
+    transform var(--products-card-hover-duration) cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow var(--products-card-hover-duration) cubic-bezier(0.22, 1, 0.36, 1),
+    border-color var(--products-card-hover-duration) cubic-bezier(0.22, 1, 0.36, 1),
+    background-color var(--products-card-hover-duration) cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .products__card--caramel {
@@ -199,6 +194,16 @@
   background: var(--color-surface-strong);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-panel);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .products__dialog-backdrop {
+    animation: products-dialog-backdrop-enter 180ms ease-out both;
+  }
+
+  .products__dialog {
+    animation: products-dialog-enter 200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
 }
 
 .products__dialog-head {
@@ -362,6 +367,14 @@
     min-height: 18rem;
     padding: 1.35rem;
   }
+
+  @media (hover: hover) and (pointer: fine) {
+    .products__card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 72px -40px rgba(0, 0, 0, 0.24);
+      border-color: rgba(178, 216, 177, 0.54);
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -396,6 +409,13 @@
   .products__track-set--clone {
     display: none !important;
   }
+
+  .products__card,
+  .products__dialog-backdrop,
+  .products__dialog {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @keyframes products-track-left {
@@ -414,6 +434,28 @@
   }
 
   to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes products-dialog-backdrop-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes products-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+
+  to {
+    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
