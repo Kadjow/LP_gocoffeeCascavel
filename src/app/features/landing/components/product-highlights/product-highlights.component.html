@@ -3,8 +3,8 @@
     <div>
       <app-section-heading
         eyebrow="Vitrine em destaque"
-        title="Uma selecao que mistura cafe especial, assinatura da casa e desejo de voltar."
-        description="Os produtos em evidencia reforcam repertorio, apresentacao e variedade sem transformar a pagina em catalogo tecnico."
+        title="Uma seleção que mistura café especial, assinatura da casa e vontade de voltar."
+        description="Os produtos em evidência reforçam repertório, apresentação e variedade sem transformar a página em um catálogo técnico."
       />
     </div>
 
@@ -32,7 +32,7 @@
                     (click)="openDetails(product)"
                     [attr.aria-label]="'Ver detalhes de ' + product.name"
                   >
-                    Ver detalhe
+                    Ver detalhes
                   </button>
                 </article>
               }
@@ -74,7 +74,7 @@
                       [attr.aria-hidden]="copyIndex === 1 ? 'true' : null"
                       [attr.tabindex]="copyIndex === 1 ? -1 : null"
                     >
-                      Ver detalhe
+                      Ver detalhes
                     </button>
                   </article>
                 }
@@ -132,13 +132,13 @@
             <div
               class="products__dialog-fallback"
               role="img"
-              [attr.aria-label]="'Imagem de detalhe indisponivel para ' + product.name"
+              [attr.aria-label]="'Imagem de detalhe indisponível para ' + product.name"
             >
               <span class="products__dialog-fallback-mark" aria-hidden="true">
                 {{ product.name.slice(0, 1) }}
               </span>
-              <strong>Apresentacao visual em breve</strong>
-              <p>Este detalhe ja esta preparado para receber a foto local do produto.</p>
+              <strong>Apresentação visual em breve</strong>
+              <p>Este espaço já está preparado para receber a foto local do produto.</p>
             </div>
           }
         </div>
@@ -147,7 +147,7 @@
 
         @if (selectedProductShowsMilkOptionsNote()) {
           <div class="products__dialog-note">
-            <span>Observacao fixa</span>
+            <span>Observação</span>
             <p>{{ business().milkOptionsNote }}</p>
           </div>
         }

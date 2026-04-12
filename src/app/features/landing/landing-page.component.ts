@@ -42,7 +42,7 @@ export class LandingPageComponent {
   constructor() {
     this.seo.setPageMetadata(
       'GoCoffee Cascavel | Cafeteria especial no centro de Cascavel',
-      'Cafe especial, frappes marcantes, cookies artesanais e uma experiencia acolhedora no centro de Cascavel.'
+      'Café especial, frappes marcantes, cookies artesanais e uma experiência acolhedora no centro de Cascavel.'
     );
   }
 }

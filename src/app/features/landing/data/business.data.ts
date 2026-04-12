@@ -18,22 +18,25 @@ export const BUSINESS_DATA: BusinessModel = {
   mapEmbedUrl: buildMapsEmbedUrl(GOCOFFEE_MAP_QUERY),
   rating: '4,9',
   reviewCount: 150,
-  heroBadge: 'GoCoffee Cascavel | A melhor experiencia do seu dia! ',
+  heroBadge: 'GoCoffee Cascavel | A melhor experiência do seu dia!',
   heroHeadline: 'Sua pausa favorita, com o sabor que o seu dia merece.',
   heroDescription:
-    'Cafés 100% arábica, frappes autorais e os cookies mais amados de Cascavel. Um espaço pensado para elevar o seu café de todo dia a um momento especial.',
+    'Cafés 100% arábica, frappes autorais e os cookies mais amados de Cascavel. Um espaço pensado para transformar o seu café de todo dia em um momento especial.',
   heroHighlights: [
     {
       title: 'Design & Aconchego',
-      description: 'A estética moderna da GoCoffee com o conforto que você busca para um encontro ou uma pausa no trabalho.',
+      description:
+        'A estética moderna da GoCoffee com o conforto que você procura para um encontro ou uma pausa no trabalho.',
     },
     {
       title: 'Menu Autoral',
-      description: 'Do clássico v60 aos frappes exclusivos, nossa vitrine equilibra cafés marcantes, doces artesanais e bebidas criativas',
+      description:
+        'Do clássico V60 aos frappes exclusivos, nossa vitrine equilibra cafés marcantes, doces artesanais e bebidas criativas.',
     },
     {
       title: 'Referência em Cascavel',
-      description: 'Nota 4,9 nas avaliações. Operação ágil, endereço central e o padrão de qualidade que você já conhece.',
+      description:
+        'Nota 4,9 nas avaliações, operação ágil, endereço central e o padrão de qualidade que você já conhece.',
     },
   ],
   experiencePillars: [
@@ -43,20 +46,20 @@ export const BUSINESS_DATA: BusinessModel = {
         'A sensação de cuidado aparece em cada detalhe: no atendimento atencioso, na limpeza impecável da loja e na apresentação cuidadosa de cada pedido que chega à mesa.',
     },
     {
-      title: 'Café especial com repertorio',
+      title: 'Café especial com repertório',
       description:
-        'Combinamos a pausa de um café bem extraído com bebidas criativas e doces que despertam os sentidos, sem nunca perder o equilíbrio.',
+        'Combinamos a pausa de um café bem extraído com bebidas criativas e doces que despertam os sentidos, sem perder o equilíbrio.',
     },
     {
       title: 'Boa escolha para encontro ou pausa',
       description:
-        'A atmosfera ideal tanto para uma conversa rápida no centro quanto para um momento de descompressão no meio do dia. O seu refúgio urbano em Cascavel.',
+        'A atmosfera é ideal tanto para uma conversa rápida no centro quanto para um momento de descompressão no meio do dia. O seu refúgio urbano em Cascavel.',
     },
   ],
   serviceModes: [
     {
       label: 'Consumo no local',
-      detail: 'Para aproveitar o ambiente, a apresentacao dos pedidos e uma pausa feita com calma.',
+      detail: 'Para aproveitar o ambiente, a apresentação dos pedidos e uma pausa feita com calma.',
     },
     {
       label: 'Retirada na loja',
@@ -64,7 +67,7 @@ export const BUSINESS_DATA: BusinessModel = {
     },
     {
       label: 'Delivery via iFood',
-      detail: 'Entrega pelo canal oficial da unidade no iFood, com a praticidade do pedido online.',
+      detail: 'Entrega pelo canal oficial da unidade no iFood, com toda a praticidade do pedido online.',
     },
   ],
   milkOptionsNote:

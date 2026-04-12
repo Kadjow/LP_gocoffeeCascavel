@@ -1,11 +1,11 @@
 <header class="header" [class.header--scrolled]="scrolled()">
   <div class="container header__inner">
-    <a class="header__brand" href="#inicio" aria-label="Voltar para o inicio">
+    <a class="header__brand" href="#inicio" aria-label="Voltar para o início">
       <span class="header__brand-mark">
         <img
           class="header__brand-logo"
           src="/images/gocoffee-icon.png"
-          alt="Icone da GoCoffee Cascavel"
+          alt="Ícone da GoCoffee Cascavel"
           decoding="async"
           fetchpriority="high"
         >
@@ -21,7 +21,7 @@
       class="header__toggle"
       [attr.aria-expanded]="menuOpen()"
       aria-controls="header-navigation"
-      aria-label="Abrir navegacao"
+      aria-label="Abrir navegação"
       (click)="toggleMenu()"
     >
       <span></span>
@@ -30,7 +30,7 @@
     </button>
 
     <div class="header__panel" id="header-navigation" [class.header__panel--open]="menuOpen()">
-      <nav class="header__nav" aria-label="Navegacao principal">
+      <nav class="header__nav" aria-label="Navegação principal">
         @for (item of navigation(); track item.fragment) {
           <a
             class="header__nav-link"

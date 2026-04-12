@@ -6,20 +6,20 @@ export const TESTIMONIALS: Testimonial[] = [
     context: 'Centro',
     headline: 'Ambiente que faz querer ficar',
     quote:
-      'A loja passa cuidado em cada detalhe. O espaco e aconchegante, o atendimento e leve e o cafe chega com apresentacao muito boa.',
+      'A loja transmite cuidado em cada detalhe. O espaço é aconchegante, o atendimento é leve e o café chega com uma apresentação caprichada.',
   },
   {
     name: 'Lucas M.',
     context: 'Cascavel',
     headline: 'Boa variedade sem perder identidade',
     quote:
-      'Tem desde o cafe especial para uma pausa mais tranquila ate bebidas mais criativas. Da para voltar varias vezes e mudar o pedido.',
+      'Tem desde o café especial para uma pausa mais tranquila até bebidas mais criativas. Dá para voltar várias vezes e variar o pedido.',
   },
   {
     name: 'Marina R.',
     context: 'Visita de tarde',
-    headline: 'Experiencia bonita e bem organizada',
+    headline: 'Experiência bonita e bem organizada',
     quote:
-      'Os cookies artesanais e os frappes chamam atencao, mas o que segura a experiencia e o atendimento atencioso e o clima acolhedor.',
+      'Os cookies artesanais e os frappes chamam atenção, mas o que sustenta a experiência é o atendimento atencioso e o clima acolhedor.',
   },
 ];

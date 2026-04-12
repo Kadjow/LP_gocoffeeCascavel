@@ -9,16 +9,16 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     description: 'Café espresso misturado a leite vaporizado e chocolate.',
     accent: 'olive',
     imageKey: 'quentes/cafe_mocha',
-    imageAlt: 'Copo de Cafe Mocha com chocolate e leite vaporizado.',
+    imageAlt: 'Copo de Café Mocha com chocolate e leite vaporizado.',
   },
   {
     id: 'cafe-carmelotto',
     name: 'Café Carmelotto',
     category: 'Bebidas Quentes',
-    description: 'Uma leitura mais indulgente do café da casa, com leite vaporizado e caramelo.',
+    description: 'Uma versão mais indulgente do café da casa, com leite vaporizado e caramelo.',
     accent: 'olive',
     imageKey: 'quentes/cafe_carmelotto',
-    imageAlt: 'Copo de Cafe Carmelotto finalizado com caramelo.',
+    imageAlt: 'Copo de Café Carmelotto finalizado com caramelo.',
   },
   {
     id: 'cappuccino-italiano',
@@ -27,22 +27,22 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     description: 'Café espresso duplo com leite vaporizado e um toque opcional de canela.',
     accent: 'olive',
     imageKey: 'quentes/cap_ita',
-    imageAlt: 'Xicara de Cappuccino Italiano com espuma cremosa.',
+    imageAlt: 'Xícara de Cappuccino Italiano com espuma cremosa.',
   },
   {
     id: 'cappuccino-brasileiro',
     name: 'Cappuccino Brasileiro',
     category: 'Bebidas Quentes',
-    description: 'Bebida adoçada composta por café, leite vaporizado, chocolate e canela.',
+    description: 'Bebida adoçada com café, leite vaporizado, chocolate e canela.',
     imageKey: 'quentes/cap_bra',
-    imageAlt: 'Xicara de Cappuccino Brasileiro com chocolate e canela.',
+    imageAlt: 'Xícara de Cappuccino Brasileiro com chocolate e canela.',
     accent: 'olive',
   },
   {
     id: 'chai-latte',
     name: 'Chai Latte',
     category: 'Bebidas Quentes',
-    description: 'Chá preto com ricas especiarias indianas e leite vaporizado (adoçado).',
+    description: 'Chá preto com especiarias indianas e leite vaporizado (adoçado).',
     accent: 'olive',
     imageKey: 'quentes/chai_latte',
     imageAlt: 'Copo de Chai Latte cremoso com especiarias.',
@@ -79,7 +79,7 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     name: 'Chocolate Quente',
     category: 'Bebidas Quentes',
     description: 'Chocolate quente cremoso e reconfortante.',
-    imageKey: 'quentes/choc_quente', 
+    imageKey: 'quentes/choc_quente',
     imageAlt: 'Copo de Chocolate Quente com espuma cremosa.',
     accent: 'olive',
   },
@@ -97,7 +97,7 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     name: 'Latte Ice',
     category: 'Bebidas Geladas',
     description:
-      'Café espresso, leite e gelo combinado com syrup à sua escolha (Natural, Baunilha, Avelã, Caramelo ou Caramelo Salgado).',
+      'Café espresso, leite e gelo combinados com o syrup da sua escolha (Natural, Baunilha, Avelã, Caramelo ou Caramelo Salgado).',
     accent: 'olive',
   },
   {
@@ -125,14 +125,14 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     id: 'cha-mate',
     name: 'Chá Mate',
     category: 'Bebidas Geladas',
-    description: 'Chá mate servido bem gelado.',
+    description: 'Chá-mate servido bem gelado.',
     accent: 'olive',
   },
   {
     id: 'hibisco-jamaica',
     name: 'Hibisco Jamaica',
     category: 'Bebidas Geladas',
-    description: 'Chá natural de hibisco com gelo. Opcional de syrup de limão adoçado.',
+    description: 'Chá natural de hibisco com gelo. Opcional com syrup de limão adoçado.',
     accent: 'olive',
   },
   {
@@ -258,7 +258,7 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     id: 'matcha-iced-latte',
     name: 'Matcha Iced Latte',
     category: 'Matcha',
-    description: 'Matcha puro com leite gelado. Opção refrescante e brilhante.',
+    description: 'Matcha puro com leite gelado. Opção refrescante e vibrante.',
     accent: 'olive',
   },
   {
@@ -272,7 +272,7 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     id: 'matcha-gocoffee-iced',
     name: 'Matcha Go Coffee Iced',
     category: 'Matcha',
-    description: 'Matcha gelado com gengibre e adoçado com mel. Pode ser feito com leite ou com água.',
+    description: 'Matcha gelado com gengibre e adoçado com mel. Pode ser feito com leite ou água.',
     accent: 'olive',
   },
   {
@@ -286,7 +286,7 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     id: 'cookie-go-coffee',
     name: 'Cookie Go Coffee',
     category: 'Doces',
-    description: 'Biscoito macio estilo cookie. Consulte os sabores disponíveis.',
+    description: 'Biscoito macio no estilo cookie. Consulte os sabores disponíveis.',
     accent: 'olive',
   },
   {
@@ -307,7 +307,7 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     id: 'croissant-requeijao',
     name: 'Croissant Requeijão',
     category: 'Salgados',
-    description: 'Croissant super crocante preenchido com requeijão quentinho.',
+    description: 'Croissant supercrocante recheado com requeijão quentinho.',
     accent: 'olive',
   },
   {
@@ -321,7 +321,7 @@ export const PRODUCT_HIGHLIGHTS: ProductHighlight[] = [
     id: 'croissant-chocolate-ao-leite',
     name: 'Croissant Chocolate ao Leite',
     category: 'Doces',
-    description: 'Croissant super crocante recheado com chocolate ao leite.',
+    description: 'Croissant supercrocante recheado com chocolate ao leite.',
     accent: 'olive',
   },
   {
@@ -359,7 +359,7 @@ const validateProductHighlights = (products: ProductHighlight[]): void => {
       product.category.trim().length === 0 ||
       product.description.trim().length === 0
     ) {
-      throw new Error(`Produto invalido encontrado: ${product.id || '[sem-id]'}`);
+      throw new Error(`Produto inválido encontrado: ${product.id || '[sem-id]'}`);
     }
 
     if (ids.has(product.id)) {
@@ -367,19 +367,19 @@ const validateProductHighlights = (products: ProductHighlight[]): void => {
     }
 
     if (!PRODUCT_CATEGORY_SET.has(product.category)) {
-      throw new Error(`Categoria invalida para ${product.id}: ${product.category}`);
+      throw new Error(`Categoria inválida para ${product.id}: ${product.category}`);
     }
 
     if (!VALID_ACCENTS.has(product.accent)) {
-      throw new Error(`Accent invalido para ${product.id}: ${product.accent}`);
+      throw new Error(`Accent inválido para ${product.id}: ${product.accent}`);
     }
 
     if (product.imageKey !== undefined && product.imageKey.trim().length === 0) {
-      throw new Error(`imageKey invalida para ${product.id}`);
+      throw new Error(`imageKey inválida para ${product.id}`);
     }
 
     if (product.imageAlt !== undefined && product.imageAlt.trim().length === 0) {
-      throw new Error(`imageAlt invalido para ${product.id}`);
+      throw new Error(`imageAlt inválido para ${product.id}`);
     }
 
     ids.add(product.id);

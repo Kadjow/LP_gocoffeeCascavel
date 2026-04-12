@@ -2,14 +2,14 @@
   <div class="container location__grid">
     <div class="location__content">
       <app-section-heading
-        eyebrow="Localizacao"
-        title="No centro de Cascavel, no endereco certo para uma pausa que vale a visita."
-        description="Chegar é facil, ficar é prazeroso: consumo no local, retirada agil e delivery oficial no iFood para acompanhar seu ritmo."
+        eyebrow="Localização"
+        title="No centro de Cascavel, no endereço certo para uma pausa que vale a visita."
+        description="Chegar é fácil, ficar é prazeroso: consumo no local, retirada ágil e delivery oficial no iFood para acompanhar o seu ritmo."
       />
 
       <div class="location__details surface-panel" appRevealOnScroll [appRevealOnScroll]="90">
         <div class="location__address">
-          <small>Endereco</small>
+          <small>Endereço</small>
           <strong>{{ business().address }}</strong>
         </div>
 
@@ -28,7 +28,7 @@
             [href]="business().mapUrl"
             target="_blank"
             rel="noreferrer"
-            aria-label="Abrir localizacao da GoCoffee Cascavel no mapa"
+            aria-label="Abrir localização da GoCoffee Cascavel no mapa"
           >
             Abrir no mapa
           </a>

@@ -6,7 +6,7 @@
       <span>{{ business().address }}</span>
     </div>
 
-    <nav class="footer__nav" aria-label="Navegacao do rodape">
+    <nav class="footer__nav" aria-label="Navegação do rodapé">
       @for (item of navigation(); track item.fragment) {
         <a [href]="'#' + item.fragment">{{ item.label }}</a>
       }
